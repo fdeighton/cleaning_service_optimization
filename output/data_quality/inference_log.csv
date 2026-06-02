@@ -1,0 +1,684 @@
+property,row,field,location,original,inferred,reason,confidence,auto_filled
+Cabbagetown,7,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Cabbagetown,21,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,21,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,22,Area Type,Doors,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,22,Frequency,Doors,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,23,Frequency,Thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,24,Area Type,Fire Cabinets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,24,Frequency,Fire Cabinets,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,25,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,25,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,26,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,27,Frequency,Elevator doors and frames,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,28,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,29,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,30,Frequency,Kitchen and kitchenettes,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,31,Frequency,Sitting areas,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,32,Frequency,Gym machinery,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,33,Task,Main entrance w/Enterphone area,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,34,Task,2 Exits west/east,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,35,Task,2 Sitting Areas,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,36,Task,Security desk,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,37,Task,Mail room/ Parcel Rm.,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,38,Task,manager assistant Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,39,Task,Leasing Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,40,Task,manager Office Sitting area x 2,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,41,Task,all glass of the lobby,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,42,Task,3 Elevators (#E1 to #E3),(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,55,Task,Main entrance w/Enterphone area,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,56,Task,2 Exits west/east,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,57,Task,2 Sitting Areas,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,58,Task,Security desk,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,59,Task,Mail room/ Parcel Rm.,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,60,Task,Mngr. Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,61,Task,Leasing Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,62,Task,PM Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,63,Task,3 Elevators (#E1 to #E3),(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,66,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,66,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,67,Frequency,Resident doors & thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,68,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,68,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,69,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,70,Area Type,Fire Cabinets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,70,Frequency,Fire Cabinets,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,71,Frequency,Elevator doors and frames & TRACKS (that floor only),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,72,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,73,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,74,Frequency,Chute Room Tiles,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,83,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Cabbagetown,105,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Cabbagetown,115,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,115,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,116,Area Type,Doors,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,116,Frequency,Doors,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,117,Frequency,Thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,118,Area Type,Fire Cabinets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,118,Frequency,Fire Cabinets,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,119,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,119,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,120,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,121,Frequency,Elevator doors and frames,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,122,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,123,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,124,Frequency,Kitchen and kitchenettes,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,125,Frequency,Sitting areas,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,126,Frequency,Gym machinery,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,127,Task,Main entrance w/Enterphone area,(no explicit task verb stated),,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,128,Task,2 Exits west/east,(no explicit task verb stated),,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,129,Task,2 Sitting Areas,(no explicit task verb stated),,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,130,Task,Security desk,(no explicit task verb stated),,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,131,Task,Mail room/ Parcel Rm.,(no explicit task verb stated),,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,132,Task,Sitting area x 2,(no explicit task verb stated),,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,133,Task,all glass of the lobby,(no explicit task verb stated),,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,134,Task,3 Elevators (#E1 to #E3),(no explicit task verb stated),,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,141,Task,Main entrance w/Enterphone area,(no explicit task verb stated) - afternoon pass,,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,142,Task,2 Exits west/east,(no explicit task verb stated) - afternoon pass,,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,143,Task,2 Sitting Areas,(no explicit task verb stated) - afternoon pass,,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,144,Task,Security desk,(no explicit task verb stated) - afternoon pass,,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,145,Task,Mail room/ Parcel Rm.,(no explicit task verb stated) - afternoon pass,,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,146,Task,Sitting area x 2,(no explicit task verb stated) - afternoon pass,,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,147,Task,all glass of the lobby,(no explicit task verb stated) - afternoon pass,,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,148,Task,3 Elevators (#E1 to #E3),(no explicit task verb stated) - afternoon pass,,no task verb in source_text or sibling rows,Low,no
+Cabbagetown,149,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,149,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,150,Area Type,Doors,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,150,Frequency,Doors,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,151,Frequency,Thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,152,Area Type,Fire Cabinets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,152,Frequency,Fire Cabinets,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,153,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,153,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,154,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,155,Frequency,Elevator doors and frames,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,156,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,157,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,158,Frequency,Kitchen and kitchenettes,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,159,Frequency,Sitting areas,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,160,Frequency,Gym machinery,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,163,Area Type,Floors (24th-12th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,164,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,165,Area Type,Floors (24th-12th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,166,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,167,Area Type,Floors (11th-2nd),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,168,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,169,Area Type,Floors (11th-2nd),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,170,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,175,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Cabbagetown,205,Area Type,Floors (27th-12th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,206,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,207,Area Type,Floors (27th-12th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,208,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,209,Area Type,Floors (11th-2nd),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,210,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,211,Area Type,Floors (11th-2nd),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,212,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,236,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,236,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,237,Frequency,Resident doors & thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,238,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,238,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,239,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,240,Area Type,Fire Cabinets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Cabbagetown,240,Frequency,Fire Cabinets,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,241,Frequency,Elevator doors and frames & TRACKS (that floor only),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,242,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,243,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,244,Frequency,Chute Room Tiles,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,246,Task,Main entrance w/Enterphone area,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,247,Task,2 Exits west/east,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,248,Task,2 Sitting Areas,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,249,Task,Security desk,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,250,Task,Mail room/ Parcel Rm.,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,251,Task,manager assistant Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,252,Task,Leasing Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,253,Task,manager Office Sitting area x 2,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,254,Task,all glass of the lobby,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,255,Task,3 Elevators (#E1 to #E3),(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,266,Task,Main entrance w/Enterphone area,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,267,Task,2 Exits west/east,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,268,Task,2 Sitting Areas,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,269,Task,Security desk,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,270,Task,Mail room/ Parcel Rm.,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,271,Task,Mngr. Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,272,Task,Leasing Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,273,Task,PM Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,274,Task,3 Elevators (#E1 to #E3),(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,277,Task,Main entrance w/Enterphone area,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,278,Task,2 Exits west/east,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,279,Task,2 Sitting Areas,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,280,Task,Security desk,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,281,Task,Mail room/ Parcel Rm.,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,282,Task,manager assistant Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,283,Task,Leasing Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,284,Task,manager Office Sitting area x 2,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,285,Task,all glass of the lobby,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,286,Task,3 Elevators (#E1 to #E3),(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,297,Task,Main entrance w/Enterphone area,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,298,Task,2 Exits west/east,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,299,Task,2 Sitting Areas,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,300,Task,Security desk,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,301,Task,Mail room/ Parcel Rm.,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,302,Task,Mngr. Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,303,Task,Leasing Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,304,Task,PM Office,(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,305,Task,3 Elevators (#E1 to #E3),(no explicit task verb stated),Vacuum,source_text contains action 'vacuum',Medium,no
+Cabbagetown,308,Frequency,Ground Floor / Parking janitor rooms,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Cabbagetown,309,Area Type,(all mopped areas),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,21,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Elm_Ledbury,41,Area Type,UPH Floor Bar,Unknown,Amenity - Indoor,location name contains 'bar',High,yes
+Elm_Ledbury,51,Area Type,Floors (PH-12th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,52,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,54,Area Type,Floors (PH-12th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,55,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,57,Area Type,Floors (11th-3rd),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,58,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,60,Area Type,Floors (11th-3rd),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,61,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,80,Area Type,2nd Floor BatterSea Bridge,Unknown,,location name has no recognizable area keyword,Low,no
+Elm_Ledbury,89,Area Type,UPH Floor Bar,Unknown,Amenity - Indoor,location name contains 'bar',High,yes
+Elm_Ledbury,92,Area Type,Glass/mirrors 2nd floor,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,93,Area Type,Glass/mirrors 10th floor,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,94,Area Type,Glass/mirrors UPH floor,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,95,Area Type,Glass/mirrors UPH floor,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,101,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,101,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,102,Area Type,Doors,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,102,Frequency,Doors,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,103,Frequency,Thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,104,Area Type,Fire Cabinets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,104,Frequency,Fire Cabinets,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,105,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,105,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,106,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,107,Frequency,Elevator doors and frames,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,108,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,109,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,110,Frequency,Kitchen and kitchenettes,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,111,Frequency,BBQs,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,112,Frequency,Sitting areas,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,113,Frequency,Gym machinery,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,116,Task,2nd Floor Raptors Basketball Court,(no explicit task verb stated),Mop,source_text contains action 'mop',Medium,no
+Elm_Ledbury,138,Area Type,2nd Floor BatterSea Bridge,Unknown,,location name has no recognizable area keyword,Low,no
+Elm_Ledbury,146,Area Type,UPH Floor Bar,Unknown,Amenity - Indoor,location name contains 'bar',High,yes
+Elm_Ledbury,164,Area Type,ELM ½ Outdoors,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,179,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Elm_Ledbury,196,Area Type,ELM ½ Outdoors,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,198,Area Type,ELM ½ Outdoors,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,213,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Elm_Ledbury,230,Area Type,ELM ½ Outdoors,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,241,Area Type,2nd Floor BatterSea Bridge,Unknown,,location name has no recognizable area keyword,Low,no
+Elm_Ledbury,250,Area Type,UPH Floor Bar,Unknown,Amenity - Indoor,location name contains 'bar',High,yes
+Elm_Ledbury,272,Area Type,2nd Floor BatterSea Bridge,Unknown,,location name has no recognizable area keyword,Low,no
+Elm_Ledbury,281,Area Type,UPH Floor Bar,Unknown,Amenity - Indoor,location name contains 'bar',High,yes
+Elm_Ledbury,303,Area Type,2nd Floor BatterSea Bridge,Unknown,,location name has no recognizable area keyword,Low,no
+Elm_Ledbury,321,Area Type,UPH Floor Bar,Unknown,Amenity - Indoor,location name contains 'bar',High,yes
+Elm_Ledbury,354,Area Type,2nd Floor BatterSea Bridge,Unknown,,location name has no recognizable area keyword,Low,no
+Elm_Ledbury,372,Area Type,UPH Floor Bar,Unknown,Amenity - Indoor,location name contains 'bar',High,yes
+Elm_Ledbury,395,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,395,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,396,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,396,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,397,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,397,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,398,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,398,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,399,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,399,Frequency,(building-wide),Unknown,As needed,notes/source_text state cadence ('As needed'),High,yes
+Elm_Ledbury,400,Area Type,Ground Floor / 2nd Floor / UPH Floor janitor rooms,Unknown,Back-of-House,location name contains 'janitor',High,yes
+Elm_Ledbury,400,Frequency,Ground Floor / 2nd Floor / UPH Floor janitor rooms,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,401,Area Type,(all mopped areas),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,422,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Elm_Ledbury,436,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,436,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,437,Frequency,Resident doors & thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,438,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,438,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,439,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,440,Area Type,Fire Cabinets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,440,Frequency,Fire Cabinets,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,441,Frequency,Elevator doors and frames & TRACKS (that floor only) PH-P4,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,442,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,443,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,444,Frequency,Chute Room Tiles,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,446,Area Type,UPH Floor Bar,Unknown,Amenity - Indoor,location name contains 'bar',High,yes
+Elm_Ledbury,450,Area Type,2nd Floor BatterSea Bridge,Unknown,,location name has no recognizable area keyword,Low,no
+Elm_Ledbury,451,Area Type,Floors (PH-12th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,452,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,454,Area Type,Floors (PH-12th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,455,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,457,Area Type,Floors (11th-3rd),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,458,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,460,Area Type,Floors (11th-3rd),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,461,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,463,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,468,Area Type,Glass/mirrors 2nd floor,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,538,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Elm_Ledbury,542,Area Type,Glass/mirrors UPH Level,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,569,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Elm_Ledbury,573,Area Type,Glass/mirrors UPH Level,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,618,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,618,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,619,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,619,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,620,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,620,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,621,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,621,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,622,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Elm_Ledbury,622,Frequency,(building-wide),Unknown,As needed,notes/source_text state cadence ('As needed'),High,yes
+Elm_Ledbury,623,Area Type,Ground Floor / UPH Floor janitor rooms,Unknown,Back-of-House,location name contains 'janitor',High,yes
+Elm_Ledbury,623,Frequency,Ground Floor / UPH Floor janitor rooms,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Elm_Ledbury,624,Area Type,(all mopped areas),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Maddox-Tyndall,3,Area Type,glass doors,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Maddox-Tyndall,13,Area Type,glass doors,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Maddox-Tyndall,24,Area Type,Glass,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Maddox-Tyndall,28,Area Type,LAUNDRY,Unknown,,location name has no recognizable area keyword,Low,no
+Maddox-Tyndall,30,Task,Corridors Gr.-10th Floor,(no explicit task verb stated),Sweep,source_text contains action 'sweep',Medium,no
+Maddox-Tyndall,31,Area Type,Floors Gr-10th,Unknown,,location name has no recognizable area keyword,Low,no
+Maddox-Tyndall,33,Task,Corridors Gr.-10th Floor,(no explicit task verb stated),Sweep,source_text contains action 'sweep',Medium,no
+Maddox-Tyndall,34,Area Type,Floors Gr-10th,Unknown,,location name has no recognizable area keyword,Low,no
+Maddox-Tyndall,36,Task,Corridors Gr.-10th Floor,(no explicit task verb stated),Vacuum Floors,sibling rows specify a single task — needs review,Medium,no
+Maddox-Tyndall,37,Area Type,Floors Gr-10th,Unknown,,location name has no recognizable area keyword,Low,no
+Maddox-Tyndall,38,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Maddox-Tyndall,38,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,39,Frequency,Resident doors & thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,40,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Maddox-Tyndall,40,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,41,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,42,Frequency,Elevator doors and frames & ALL ELEVATOR TRACKS,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,43,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,44,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,45,Frequency,Chute Room Tiles,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,46,Frequency,Stairwell handrails floors B-11th,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,51,Area Type,glass doors,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Maddox-Tyndall,63,Area Type,glass doors,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Maddox-Tyndall,76,Area Type,Glass,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Maddox-Tyndall,80,Area Type,LAUNDRY,Unknown,,location name has no recognizable area keyword,Low,no
+Maddox-Tyndall,82,Task,Corridors Gr.-11th Floor,(no explicit task verb stated),Sweep,source_text contains action 'sweep',Medium,no
+Maddox-Tyndall,83,Area Type,Floors Gr-11th,Unknown,,location name has no recognizable area keyword,Low,no
+Maddox-Tyndall,85,Task,Corridors Gr.-11th Floor,(no explicit task verb stated),Sweep,source_text contains action 'sweep',Medium,no
+Maddox-Tyndall,86,Area Type,Floors Gr-11th,Unknown,,location name has no recognizable area keyword,Low,no
+Maddox-Tyndall,88,Task,Corridors Gr.-11th Floor,(no explicit task verb stated),Vacuum Floors,sibling rows specify a single task — needs review,Medium,no
+Maddox-Tyndall,89,Area Type,Floors Gr-11th,Unknown,,location name has no recognizable area keyword,Low,no
+Maddox-Tyndall,90,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Maddox-Tyndall,90,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,91,Frequency,Resident doors & thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,92,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Maddox-Tyndall,92,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,93,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,94,Frequency,Elevator doors and frames & ALL ELEVATOR TRACKS,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,95,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,96,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,97,Frequency,Chute Room Tiles,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,98,Frequency,Stairwell handrails floors B-11th,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,100,Area Type,B floor / Ground floor janitor station,Unknown,Back-of-House,location name contains 'janitor',High,yes
+Maddox-Tyndall,100,Frequency,B floor / Ground floor janitor station,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Maddox-Tyndall,101,Area Type,(all mopped areas),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,51,Area Type,10 DEAN,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,51,Frequency,10 DEAN,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,53,Task,39th Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,53,Frequency,39th Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,54,Task,39th Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,54,Frequency,39th Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,55,Task,P3 Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,55,Frequency,P3 Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,56,Task,P3 Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,56,Frequency,P3 Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,57,Task,3rd Floor Tiled Exit to patio,(no explicit task verb stated),,no task verb in source_text or sibling rows,Low,no
+Parker,58,Task,3rd Floor Patio,(no explicit task verb stated),,no task verb in source_text or sibling rows,Low,no
+Parker,59,Task,3rd Floor Dog Run Area,(no explicit task verb stated),,no task verb in source_text or sibling rows,Low,no
+Parker,67,Area Type,39th Floor Glass,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,70,Area Type,38th Floor Kids Adventure Zone,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,74,Area Type,38th Floor Bowling Alley,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,77,Area Type,38th Floor Windows,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,83,Area Type,Floor (2nd-12th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,84,Area Type,Carpet (2nd-12th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,86,Area Type,Floor (13th-25th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,87,Area Type,Carpet (13th-25th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,89,Area Type,Floor (26th-37th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,90,Area Type,Carpet (26th-37th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,91,Task,3rd Floor Tiled Exit to patio,(no explicit task verb stated),,no task verb in source_text or sibling rows,Low,no
+Parker,92,Task,3rd Floor Patio,(no explicit task verb stated),,no task verb in source_text or sibling rows,Low,no
+Parker,93,Task,3rd Floor Dog Run Area,(no explicit task verb stated),,no task verb in source_text or sibling rows,Low,no
+Parker,94,Area Type,38th Floor,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,95,Area Type,39th Floor,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,96,Area Type,5th Floor,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,97,Task,39th Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,97,Frequency,39th Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,98,Task,39th Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,98,Frequency,39th Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,99,Task,P3 Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,99,Frequency,P3 Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,100,Task,P3 Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,100,Frequency,P3 Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,101,Area Type,Glass & Mirrors 39,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,102,Area Type,Glass & Mirrors 38,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,118,Area Type,38th Floor Kids Adventure Zone,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,122,Area Type,38th Floor Bowling Alley,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,131,Area Type,39th Floor,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,131,Frequency,39th Floor,Unknown,Daily,same location scheduled 'Daily' elsewhere (different task),Medium,no
+Parker,132,Area Type,38th Floor,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,132,Frequency,38th Floor,Unknown,Daily,same location scheduled 'Daily' elsewhere (different task),Medium,no
+Parker,135,Area Type,39th Floor,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,135,Frequency,39th Floor,Unknown,Daily,same location scheduled 'Daily' elsewhere (different task),Medium,no
+Parker,136,Area Type,38th Floor,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,136,Frequency,38th Floor,Unknown,Daily,same location scheduled 'Daily' elsewhere (different task),Medium,no
+Parker,137,Frequency,Chute Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,138,Task,39th Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,138,Frequency,39th Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,139,Task,39th Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,139,Frequency,39th Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,140,Task,P3 Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,140,Frequency,P3 Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,141,Task,P3 Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,141,Frequency,P3 Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,142,Area Type,Electrical Closet 39th Floor,Unknown,Back-of-House,location name contains 'electrical',High,yes
+Parker,142,Task,Electrical Closet 39th Floor,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,142,Frequency,Electrical Closet 39th Floor,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,158,Task,3rd Floor Tiled Exit to patio,(no explicit task verb stated),Clean Barbeque,sibling rows specify a single task — needs review,Medium,no
+Parker,159,Task,3rd Floor Patio,(no explicit task verb stated),Clean Barbeque,sibling rows specify a single task — needs review,Medium,no
+Parker,160,Task,3rd Floor Dog Run Area,(no explicit task verb stated),Clean Barbeque,sibling rows specify a single task — needs review,Medium,no
+Parker,188,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,188,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,189,Frequency,"Resident doors, frames, thresholds",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,190,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,190,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,191,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,192,Frequency,Elevator doors and frames & TRACKS 37(PH) to 2nd,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,193,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,194,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,197,Frequency,Lobby furniture,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,198,Frequency,Washrooms,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,199,Area Type,Glass,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,199,Frequency,Glass,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,200,Frequency,Elevator tracks,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,201,Task,39th Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,201,Frequency,39th Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,202,Task,39th Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,202,Frequency,39th Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,203,Task,P3 Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,203,Frequency,P3 Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,204,Task,P3 Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,204,Frequency,P3 Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,205,Area Type,Electrical Closet 39th Floor,Unknown,Back-of-House,location name contains 'electrical',High,yes
+Parker,205,Task,Electrical Closet 39th Floor,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,205,Frequency,Electrical Closet 39th Floor,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,230,Area Type,(location not specified),Unknown,,location name has no recognizable area keyword,Low,no
+Parker,254,Task,39th Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,254,Frequency,39th Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,255,Task,39th Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,255,Frequency,39th Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,256,Task,P3 Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,256,Frequency,P3 Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,257,Task,P3 Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,257,Frequency,P3 Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,261,Area Type,Electrical Closets 39th floor,Unknown,Back-of-House,location name contains 'electrical',High,yes
+Parker,261,Task,Electrical Closets 39th floor,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,261,Frequency,Electrical Closets 39th floor,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,262,Frequency,Lobby furniture,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,263,Frequency,Washrooms,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,264,Area Type,Glass,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,264,Frequency,Glass,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,265,Frequency,Elevator tracks,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,290,Area Type,(location not specified),Unknown,,location name has no recognizable area keyword,Low,no
+Parker,314,Task,39th Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,314,Frequency,39th Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,315,Task,39th Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,315,Frequency,39th Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,316,Task,P3 Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,316,Frequency,P3 Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,317,Task,P3 Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,317,Frequency,P3 Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,321,Area Type,Electrical Closets 39th floor,Unknown,Back-of-House,location name contains 'electrical',High,yes
+Parker,321,Task,Electrical Closets 39th floor,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,321,Frequency,Electrical Closets 39th floor,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,322,Frequency,Lobby furniture,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,323,Frequency,Washrooms,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,324,Area Type,Glass,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,324,Frequency,Glass,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,325,Frequency,Elevator tracks,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,327,Area Type,Back,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,330,Task,3rd Floor Dog Exit,(no explicit task verb stated),Clean Barbeque,sibling rows specify a single task — needs review,Medium,no
+Parker,331,Task,Dog Run Area,(no explicit task verb stated),Clean Barbeque,sibling rows specify a single task — needs review,Medium,no
+Parker,344,Area Type,38th Floor Kids Adventure Zone,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,348,Area Type,38th Floor Bowling Alley,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,352,Area Type,Back,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,355,Task,3rd Floor Dog Exit,(no explicit task verb stated),Debris Pick up,shared block has mixed tasks — dominant shown — needs review,Medium,no
+Parker,356,Task,Dog Run Area,(no explicit task verb stated),Debris Pick up,shared block has mixed tasks — dominant shown — needs review,Medium,no
+Parker,362,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,364,Area Type,Back,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,367,Task,3rd Floor Dog Exit,(no explicit task verb stated),Clean Barbeque,sibling rows specify a single task — needs review,Medium,no
+Parker,368,Task,Dog Run Area,(no explicit task verb stated),Clean Barbeque,sibling rows specify a single task — needs review,Medium,no
+Parker,374,Area Type,39th & 38th Floor,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,376,Area Type,Back,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,379,Task,39th Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,379,Frequency,39th Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,380,Task,39th Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,380,Frequency,39th Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,381,Task,P3 Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,381,Frequency,P3 Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,382,Task,P3 Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,382,Frequency,P3 Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,386,Area Type,Electrical Closets 39th floor,Unknown,Back-of-House,location name contains 'electrical',High,yes
+Parker,386,Task,Electrical Closets 39th floor,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,386,Frequency,Electrical Closets 39th floor,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,388,Area Type,Back,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,391,Task,3rd Floor Dog Exit,(no explicit task verb stated),Clean Barbeque,sibling rows specify a single task — needs review,Medium,no
+Parker,392,Task,Dog Run Area,(no explicit task verb stated),Clean Barbeque,sibling rows specify a single task — needs review,Medium,no
+Parker,405,Area Type,38th Floor Kids Adventure Zone,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,409,Area Type,38th Floor Bowling Alley,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,413,Area Type,Back,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,416,Task,3rd Floor Dog Exit,(no explicit task verb stated),Debris Pick up,shared block has mixed tasks — dominant shown — needs review,Medium,no
+Parker,417,Task,Dog Run Area,(no explicit task verb stated),Debris Pick up,shared block has mixed tasks — dominant shown — needs review,Medium,no
+Parker,423,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,425,Area Type,Back,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,428,Task,3rd Floor Dog Exit,(no explicit task verb stated),Clean Barbeque,sibling rows specify a single task — needs review,Medium,no
+Parker,429,Task,Dog Run Area,(no explicit task verb stated),Clean Barbeque,sibling rows specify a single task — needs review,Medium,no
+Parker,435,Area Type,39th & 38th Floor,Unknown,,location name has no recognizable area keyword,Low,no
+Parker,437,Area Type,Back,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Parker,440,Task,39th Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,440,Frequency,39th Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,441,Task,39th Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,441,Frequency,39th Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,442,Task,P3 Storage Rm.,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,442,Frequency,P3 Storage Rm.,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,443,Task,P3 Housekeeping Room,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,443,Frequency,P3 Housekeeping Room,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Parker,447,Area Type,Electrical Closets 39th floor,Unknown,Back-of-House,location name contains 'electrical',High,yes
+Parker,447,Task,Electrical Closets 39th floor,(no explicit task stated),,no task verb in source_text or sibling rows,Low,no
+Parker,447,Frequency,Electrical Closets 39th floor,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,0,Area Type,10 Dean,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,16,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,34,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,34,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,35,Frequency,Resident doors & thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,36,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,36,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,37,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,38,Area Type,Fire Cabinets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,38,Frequency,Fire Cabinets,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,39,Frequency,Elevator doors and frames & TRACKS (that floor only) P levels,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,40,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,41,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,42,Frequency,Chute Room Tiles,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,53,Area Type,BatterSea Bridge,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,62,Area Type,Bar,Unknown,Amenity - Indoor,location name contains 'bar',High,yes
+Sloane,65,Area Type,Floors,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,68,Area Type,Floors,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,71,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,71,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,72,Area Type,Doors,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,72,Frequency,Doors,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,73,Frequency,Thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,74,Area Type,Fire Cabinets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,74,Frequency,Fire Cabinets,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,75,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,75,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,76,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,77,Frequency,Elevator doors and frames,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,78,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,79,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,80,Frequency,Kitchen and kitchenettes,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,81,Frequency,BBQs,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,82,Frequency,Sitting areas,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,83,Frequency,Gym machinery,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,87,Area Type,Floors (PH-13th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,88,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,89,Area Type,Floors (12th-3rd),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,90,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,92,Area Type,Floors (PH-13th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,93,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,94,Area Type,Floors (12th-3rd),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,95,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,106,Area Type,BatterSea Bridge,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,119,Area Type,Bar,Unknown,Amenity - Indoor,location name contains 'bar',High,yes
+Sloane,124,Area Type,10 Dean,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,133,Area Type,10 Dean,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,154,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,172,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,172,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,173,Frequency,Resident doors & thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,174,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,174,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,175,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,176,Area Type,Fire Cabinets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,176,Frequency,Fire Cabinets,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,177,Frequency,Elevator doors and frames & TRACKS (that floor only) P levels,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,178,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,179,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,180,Frequency,Chute Room Tiles,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,202,Area Type,BatterSea Bridge,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,211,Area Type,Bar,Unknown,Amenity - Indoor,location name contains 'bar',High,yes
+Sloane,216,Area Type,10 Dean,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,225,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,225,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,226,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,226,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,227,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,227,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,228,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,228,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,229,Area Type,Ground Floor / 2nd Floor / UPH Floor janitor rooms,Unknown,Back-of-House,location name contains 'janitor',High,yes
+Sloane,229,Frequency,Ground Floor / 2nd Floor / UPH Floor janitor rooms,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,230,Area Type,(all mopped areas),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,234,Area Type,Coffee station,Unknown,Amenity - Indoor,location name contains 'coffee',High,yes
+Sloane,240,Area Type,Bicycle room,Unknown,Back-of-House,location name contains 'bicycle',High,yes
+Sloane,254,Area Type,Kids Playroom,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,266,Area Type,Kids Playroom,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,269,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,287,Area Type,Coffee station,Unknown,Amenity - Indoor,location name contains 'coffee',High,yes
+Sloane,293,Area Type,Bicycle room,Unknown,Back-of-House,location name contains 'bicycle',High,yes
+Sloane,297,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,297,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,298,Frequency,Resident doors & thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,299,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,299,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,300,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,301,Area Type,Fire Cabinets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,301,Frequency,Fire Cabinets,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,302,Frequency,Elevator doors and frames & TRACKS (that floor only) 25th-P3,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,303,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,304,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,305,Frequency,Chute Room Tiles,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,308,Area Type,Floors (25th-12th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,309,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,310,Area Type,Floor (11th-3rd),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,311,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,313,Area Type,Floors (25th-12th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,314,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,315,Area Type,Floor (11th-3rd),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,316,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,323,Area Type,Coffee station,Unknown,Amenity - Indoor,location name contains 'coffee',High,yes
+Sloane,329,Area Type,Bicycle room,Unknown,Back-of-House,location name contains 'bicycle',High,yes
+Sloane,333,Area Type,Baseboards,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,333,Frequency,Baseboards,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,334,Frequency,Resident doors & thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,335,Area Type,Ventilation and wallpaper around it,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,335,Frequency,Ventilation and wallpaper around it,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,336,Frequency,Corridor lighting,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,337,Area Type,Fire Cabinets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,337,Frequency,Fire Cabinets,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,338,Frequency,Elevator doors and frames & TRACKS (that floor only) 25th-P3,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,339,Frequency,"Stairwells doors, frames, thresholds & hinges (top of door)",Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,340,Frequency,All metal thresholds,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,341,Frequency,Chute Room Tiles,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,345,Area Type,Coffee station,Unknown,Amenity - Indoor,location name contains 'coffee',High,yes
+Sloane,351,Area Type,Bicycle room,Unknown,Back-of-House,location name contains 'bicycle',High,yes
+Sloane,365,Area Type,Kids Playroom,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,368,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,376,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,382,Area Type,Coffee station,Unknown,Amenity - Indoor,location name contains 'coffee',High,yes
+Sloane,388,Area Type,Bicycle room,Unknown,Back-of-House,location name contains 'bicycle',High,yes
+Sloane,402,Area Type,Kids Playroom,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,405,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,413,Area Type,Gr. Floor Areas,Unknown,,location name has no recognizable area keyword,Low,no
+Sloane,416,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,416,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,417,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,417,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,418,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,418,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,419,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Sloane,419,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,420,Area Type,Ground Floor / 2nd Floor janitor rooms,Unknown,Back-of-House,location name contains 'janitor',High,yes
+Sloane,420,Frequency,Ground Floor / 2nd Floor janitor rooms,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Sloane,421,Area Type,(all mopped areas),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,11,Area Type,Mezzanine (M) Level The Reel,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,12,Area Type,Mezzanine (M) Level The Gallery,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,16,Area Type,The Temple,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,23,Area Type,SB Level Beauty for the Beast,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,28,Area Type,2nd Floor STOA,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,33,Area Type,Floors (15th-9th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,34,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,35,Area Type,Floors (15th-9th),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,36,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,37,Area Type,Floor (8th-3rd),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,38,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,39,Area Type,Floor (8th-3rd),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,40,Area Type,Carpets,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,47,Area Type,Glass/mirrors PH Level,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,48,Area Type,Glass/mirrors 15th and 2nd Level,Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,74,Area Type,Mezzanine (M) Level The Reel,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,75,Area Type,Mezzanine (M) Level The Gallery,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,79,Area Type,The Temple,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,85,Area Type,SB Level Beauty for the Beast,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,90,Area Type,2nd Floor STOA,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,98,Task,Main entrance w/Enterphone area,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,99,Task,Back entrance with long corridor,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,100,Task,Sitting Area,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,101,Task,Security desk,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,102,Task,Mail room,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,103,Task,Parcel Rm.,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,104,Task,Management Office,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,105,Task,1 Universal Washroom,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,106,Task,Bike Room,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,107,Task,2 Elevators (#1 to #3),(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,119,Area Type,Mezzanine (M) Level The Reel,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,120,Area Type,Mezzanine (M) Level The Gallery,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,124,Area Type,The Temple,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,130,Area Type,SB Level Beauty for the Beast,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,135,Area Type,2nd Floor STOA,Unknown,,location name has no recognizable area keyword,Low,no
+Waverley,143,Task,Main entrance w/Enterphone area,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,144,Task,Back entrance with long corridor,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,145,Task,Sitting Area,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,146,Task,Security desk,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,147,Task,Mail room,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,148,Task,Parcel Rm.,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,149,Task,Management Office,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,150,Task,1 Universal Washroom,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,151,Task,Bike Room,(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,152,Task,2 Elevators (#1 to #3),(no explicit task verb stated),"Empty trash, replenish supplies, clean, dust, disinfect etc.",source_text describes general cleaning (applies to whole bundle),High,yes
+Waverley,154,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,154,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Waverley,155,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,155,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Waverley,156,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,156,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Waverley,157,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,157,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Waverley,158,Area Type,(building-wide),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
+Waverley,158,Frequency,(building-wide),Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Waverley,159,Frequency,Ground Floor / Mezzanine / SB (P1) / 2nd Floor janitor rooms,Unknown,,no cadence stated and no consistent frequency for this location,Low,no
+Waverley,160,Area Type,(all mopped areas),Unknown,,surface/feature or building-wide reference — no discrete area,Low,no
