@@ -443,6 +443,10 @@ area_counts = df["Area Type"].value_counts()
 loc_counts = df["Location"].value_counts()
 emp_counts = df.loc[df["Employee"] != "", "Employee"].value_counts()
 task_norm = df["Task"].apply(normalize_task)
+# Exclude unclassified / facility-note values from executive figures (they are
+# quantified instead on the Data Quality tab, so nothing is hidden).
+classified_area = area_counts.drop("Unknown", errors="ignore")
+explicit_task = task_norm[task_norm != "No Explicit Task"].value_counts()
 total_loc = df["Location"].nunique()
 sh, ex = int(len(shared)), int(len(exclusive))
 sh_pct = round(100 * sh / total_loc) if total_loc else 0
@@ -478,15 +482,15 @@ with tab1:
         (f"{len(df):,}", "Schedule Assignments", "scheduled cleaning tasks", True),
         (int(emp_counts.size), "Employees", "people on the schedule", False),
         (total_loc, "Locations", "distinct areas serviced", False),
-        (df["Area Type"].nunique(), "Area Types", "categories of space", False),
+        (int(classified_area.size), "Area Types", "classified categories", False),
         (sh, "Shared Locations", "served by 2+ people", False),
         (ex, "Exclusive Locations", "served by one person", False),
     ])
 
     bullets = []
-    if len(area_counts):
-        bullets.append(f"Scheduled attention centers on <b>{area_counts.index[0]}</b> areas — "
-                       f"{round(100 * area_counts.iloc[0] / len(df))}% of all assignments.")
+    if len(classified_area):
+        bullets.append(f"Scheduled attention centers on <b>{classified_area.index[0]}</b> areas — "
+                       f"{round(100 * classified_area.iloc[0] / len(df))}% of all assignments.")
     if len(emp_counts):
         bullets.append(f"<b>{emp_counts.index[0]}</b> carries the most of the standing schedule "
                        f"({int(emp_counts.iloc[0])} assignments).")
@@ -508,15 +512,19 @@ with tab1:
         mini_bar(volume(df["Location"], "Location", 5), "Location")
     with v2:
         st.markdown("**Area Type Distribution**")
-        mini_bar(volume(df["Area Type"], "Area Type", 5), "Area Type")
+        mini_bar(volume(df.loc[df["Area Type"] != "Unknown", "Area Type"], "Area Type", 5), "Area Type")
+        if dq["unknown_area"]:
+            st.caption(f"Excludes {dq['unknown_area']} unclassified-area assignments — see Data Quality tab.")
     with v3:
         st.markdown("**Top Tasks**")
-        mini_bar(volume(task_norm, "Task", 5), "Task")
+        mini_bar(volume(task_norm[task_norm != "No Explicit Task"], "Task", 5), "Task")
+        if dq["no_explicit"]:
+            st.caption(f"Excludes {dq['no_explicit']} 'No Explicit Task' rows — see Data Quality tab.")
     st.markdown(f"""
     <div class='vstrip'>
-      <div><div class='l'>Highest Volume Area</div><div class='v'>{area_counts.index[0]}</div></div>
+      <div><div class='l'>Highest Volume Area</div><div class='v'>{classified_area.index[0] if len(classified_area) else '—'}</div></div>
       <div><div class='l'>Highest Volume Location</div><div class='v'>{loc_counts.index[0]}</div></div>
-      <div><div class='l'>Most Common Task</div><div class='v'>{task_norm.value_counts().index[0]}</div></div>
+      <div><div class='l'>Most Common Task</div><div class='v'>{explicit_task.index[0] if len(explicit_task) else '—'}</div></div>
     </div>
     """, unsafe_allow_html=True)
 
