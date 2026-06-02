@@ -237,6 +237,9 @@ def inject_css():
     html, body, [class*="css"] {{ font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; }}
     .stApp {{ background: {PAGE}; }}
     #MainMenu, header, footer {{ visibility: hidden; }}
+    [data-testid="manage-app-button"], [data-testid="stToolbar"],
+    [data-testid="stStatusWidget"], .stAppDeployButton, .viewerBadge_container__1QSob,
+    [class*="viewerBadge"] {{ display: none !important; visibility: hidden !important; }}
     .block-container {{ padding-top: 1.1rem; padding-bottom: 3rem; max-width: 1340px; }}
     [data-testid="stSidebar"] {{ background: {INK}; }}
     [data-testid="stSidebar"] * {{ color: #EFEAE2 !important; }}
@@ -429,8 +432,6 @@ areas_all = sorted(a for a in df["Area Type"].unique() if a)
 pick_a = st.sidebar.multiselect("Area Type", areas_all)
 if pick_a:
     df = df[df["Area Type"].isin(pick_a)]
-st.sidebar.markdown("---")
-st.sidebar.caption("CSV-driven · drop a new schedule into /schedule_data and reload.")
 
 if df.empty:
     st.warning("No assignments match the current filters.")
@@ -514,7 +515,7 @@ with tab1:
         st.markdown("**Area Type Distribution**")
         mini_bar(volume(df.loc[df["Area Type"] != "Unknown", "Area Type"], "Area Type", 5), "Area Type")
         if dq["unknown_area"]:
-            st.caption(f"Excludes {dq['unknown_area']} unclassified-area assignments — see Data Quality tab.")
+            st.caption(f"Excludes {dq['unknown_area']} unclassified-area rows — see Data Quality tab.")
     with v3:
         st.markdown("**Top Tasks**")
         mini_bar(volume(task_norm[task_norm != "No Explicit Task"], "Task", 5), "Task")
