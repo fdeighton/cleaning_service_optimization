@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.streamlit/
+streamlit_run.log
+.venv/
+venv/

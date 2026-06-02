@@ -1,0 +1,30 @@
+keyword,task_category
+chute,Chutes
+elevator track,Elevator-Tracks
+track,Elevator-Tracks
+squeegee,Glass / Windows
+glass,Glass / Windows
+window,Glass / Windows
+mirror,Glass / Windows
+carpet,Floors - Carpet
+shampoo,Floors - Carpet
+vacuum,Floors - Carpet
+mop,Floors - Hard
+scrub,Floors - Hard
+buff,Floors - Hard
+strip,Floors - Hard
+sweep,Floors - Hard
+disinfect,General Clean
+dust,General Clean
+empty trash,General Clean
+replenish,General Clean
+clean,General Clean
+wipe,General Clean
+spot clean,Detail / Specials
+detail,Detail / Specials
+special,Detail / Specials
+baseboard,Detail / Specials
+re-check,Re-check / Re-clean
+recheck,Re-check / Re-clean
+re-clean,Re-check / Re-clean
+inspect,Re-check / Re-clean

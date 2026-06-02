@@ -1,0 +1,4 @@
+# CleanLens — cleaning schedule analytics prototype
+streamlit>=1.32
+pandas>=2.0
+plotly>=5.18

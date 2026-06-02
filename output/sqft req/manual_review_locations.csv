@@ -1,0 +1,100 @@
+property_name,raw_location,proposed_clean_location,proposed_area_type,priority,occurrence_count,review_reasons
+Cabbagetown,(all mopped areas),(all mopped areas),Other / Unknown,Low Priority,1,area type unclear; ambiguous / bundled naming
+Cabbagetown,2 Sitting Areas,2 Sitting Areas,Other / Unknown,High Priority,11,area type unclear
+Cabbagetown,All metal thresholds,All metal thresholds,Other / Unknown,Low Priority,5,area type unclear
+Cabbagetown,Baseboards,Baseboards,Other / Unknown,Low Priority,5,area type unclear
+Cabbagetown,Carpets,Carpets,Other / Unknown,Low Priority,8,area type unclear
+Cabbagetown,Doors,Doors,Other / Unknown,Low Priority,3,area type unclear
+Cabbagetown,Empty units,Empty units,Other / Unknown,Low Priority,2,area type unclear
+Cabbagetown,Fire Cabinets,Fire Cabinets,Other / Unknown,Low Priority,5,area type unclear
+Cabbagetown,Floors (11th-2nd),Floors (11th-2nd),Other / Unknown,Low Priority,4,area type unclear
+Cabbagetown,Floors (24th-12th),Floors (24th-12th),Other / Unknown,Low Priority,2,area type unclear
+Cabbagetown,Floors (27th-12th),Floors (27th-12th),Other / Unknown,Low Priority,2,area type unclear
+Cabbagetown,Gr. Floor Areas,Gr. Floor Areas,Other / Unknown,High Priority,4,area type unclear
+Cabbagetown,Gym,Gym,Fitness,High Priority,5,very short / unclear name
+Cabbagetown,Resident doors & thresholds,Resident doors & thresholds,Other / Unknown,Low Priority,2,area type unclear
+Cabbagetown,Sitting area x 2,Sitting area x 2,Other / Unknown,Low Priority,2,area type unclear
+Cabbagetown,Sitting areas,Sitting areas,Other / Unknown,Low Priority,3,area type unclear
+Cabbagetown,Thresholds,Thresholds,Other / Unknown,Low Priority,3,area type unclear
+Cabbagetown,Ventilation and wallpaper around it,Ventilation and wallpaper around it,Other / Unknown,Low Priority,5,area type unclear
+Elm/Ledbury,(all mopped areas),(all mopped areas),Other / Unknown,Low Priority,2,area type unclear; ambiguous / bundled naming
+Elm/Ledbury,(building-wide),(building-wide),Other / Unknown,High Priority,10,area type unclear; ambiguous / bundled naming
+Elm/Ledbury,2nd Floor BatterSea Bridge,2nd Floor BatterSea Bridge,Other / Unknown,High Priority,7,area type unclear
+Elm/Ledbury,All metal thresholds,All metal thresholds,Other / Unknown,Low Priority,2,area type unclear
+Elm/Ledbury,Baseboards,Baseboards,Other / Unknown,Low Priority,2,area type unclear
+Elm/Ledbury,Carpets,Carpets,Other / Unknown,Low Priority,9,area type unclear
+Elm/Ledbury,Doors,Doors,Other / Unknown,Low Priority,1,area type unclear
+Elm/Ledbury,Fire Cabinets,Fire Cabinets,Other / Unknown,Low Priority,2,area type unclear
+Elm/Ledbury,Floors (11th-3rd),Floors (11th-3rd),Other / Unknown,Low Priority,4,area type unclear
+Elm/Ledbury,Floors (PH-12th),Floors (PH-12th),Other / Unknown,Low Priority,4,area type unclear
+Elm/Ledbury,Glass/mirrors 10th floor,Glass/mirrors 10th floor,Other / Unknown,Low Priority,1,area type unclear
+Elm/Ledbury,Glass/mirrors 2nd floor,Glass/mirrors 2nd floor,Other / Unknown,Low Priority,2,area type unclear
+Elm/Ledbury,Glass/mirrors UPH Level,Glass/mirrors UPH Level,Other / Unknown,Low Priority,2,area type unclear
+Elm/Ledbury,Glass/mirrors UPH floor,Glass/mirrors UPH floor,Other / Unknown,Low Priority,2,area type unclear
+Elm/Ledbury,Gr. Floor Areas,Gr. Floor Areas,Other / Unknown,High Priority,6,area type unclear
+Elm/Ledbury,P1 Level,P1 Level,Other / Unknown,High Priority,6,area type unclear
+Elm/Ledbury,Resident doors & thresholds,Resident doors & thresholds,Other / Unknown,Low Priority,1,area type unclear
+Elm/Ledbury,Sitting Area,Sitting Area,Other / Unknown,High Priority,20,area type unclear
+Elm/Ledbury,Sitting areas,Sitting areas,Other / Unknown,Low Priority,1,area type unclear
+Elm/Ledbury,Thresholds,Thresholds,Other / Unknown,Low Priority,1,area type unclear
+Elm/Ledbury,Ventilation and wallpaper around it,Ventilation and wallpaper around it,Other / Unknown,Low Priority,2,area type unclear
+Maddox-Tyndall,(all mopped areas),(all mopped areas),Other / Unknown,Low Priority,1,area type unclear; ambiguous / bundled naming
+Maddox-Tyndall,All metal thresholds,All metal thresholds,Other / Unknown,Low Priority,2,area type unclear
+Maddox-Tyndall,Baseboards,Baseboards,Other / Unknown,Low Priority,2,area type unclear
+Maddox-Tyndall,Floors Gr-10th,Floors Gr-10th,Other / Unknown,Low Priority,3,area type unclear
+Maddox-Tyndall,Floors Gr-11th,Floors Gr-11th,Other / Unknown,Low Priority,3,area type unclear
+Maddox-Tyndall,Front,Front,Other / Unknown,High Priority,4,area type unclear
+Maddox-Tyndall,GYM,GYM,Fitness,High Priority,2,very short / unclear name
+Maddox-Tyndall,Glass,Glass,Other / Unknown,Low Priority,2,area type unclear
+Maddox-Tyndall,Resident doors & thresholds,Resident doors & thresholds,Other / Unknown,Low Priority,2,area type unclear
+Maddox-Tyndall,Sitting Area,Sitting Area,Other / Unknown,High Priority,4,area type unclear
+Maddox-Tyndall,Units,Units,Other / Unknown,Low Priority,2,area type unclear
+Maddox-Tyndall,Ventilation and wallpaper around it,Ventilation and wallpaper around it,Other / Unknown,Low Priority,2,area type unclear
+Maddox-Tyndall,glass doors,glass doors,Other / Unknown,Low Priority,4,area type unclear
+The Parker,(location not specified),(location not specified),Other / Unknown,Low Priority,2,area type unclear; ambiguous / bundled naming
+The Parker,10 DEAN,10 DEAN,Other / Unknown,Low Priority,1,area type unclear
+The Parker,38th Floor,38th Floor,Other / Unknown,Low Priority,3,area type unclear
+The Parker,38th Floor Windows,38th Floor Windows,Other / Unknown,Low Priority,1,area type unclear
+The Parker,39th & 38th Floor,39th & 38th Floor,Other / Unknown,Low Priority,2,area type unclear
+The Parker,39th Floor,39th Floor,Other / Unknown,Low Priority,3,area type unclear
+The Parker,39th Floor Glass,39th Floor Glass,Other / Unknown,Low Priority,1,area type unclear
+The Parker,39th Floor Terrace w/Sitting Areas & Barbeques,39th Floor Terrace w/Sitting Areas & Barbeques,Terrace / Outdoor,Low Priority,1,possible duplicate (case/spelling variant)
+The Parker,39th Floor Terrace w/Sitting areas & Barbeques,39th Floor Terrace w/Sitting areas & Barbeques,Terrace / Outdoor,Medium Priority,2,possible duplicate (case/spelling variant)
+The Parker,5th Floor,5th Floor,Other / Unknown,Low Priority,1,area type unclear
+The Parker,All metal thresholds,All metal thresholds,Other / Unknown,Low Priority,1,area type unclear
+The Parker,Back,Back,Other / Unknown,High Priority,8,area type unclear
+The Parker,Baseboards,Baseboards,Other / Unknown,Low Priority,1,area type unclear
+The Parker,Carpet (13th-25th),Carpet (13th-25th),Other / Unknown,Low Priority,1,area type unclear
+The Parker,Carpet (26th-37th),Carpet (26th-37th),Other / Unknown,Low Priority,1,area type unclear
+The Parker,Carpet (2nd-12th),Carpet (2nd-12th),Other / Unknown,Low Priority,1,area type unclear
+The Parker,Carpets,Carpets,Other / Unknown,Low Priority,2,area type unclear
+The Parker,Floor (13th-25th),Floor (13th-25th),Other / Unknown,Low Priority,1,area type unclear
+The Parker,Floor (26th-37th),Floor (26th-37th),Other / Unknown,Low Priority,1,area type unclear
+The Parker,Floor (2nd-12th),Floor (2nd-12th),Other / Unknown,Low Priority,1,area type unclear
+The Parker,Front,Front,Other / Unknown,High Priority,8,area type unclear
+The Parker,Glass,Glass,Other / Unknown,Low Priority,3,area type unclear
+The Parker,Glass & Mirrors 38,Glass & Mirrors 38,Other / Unknown,Low Priority,1,area type unclear
+The Parker,Glass & Mirrors 39,Glass & Mirrors 39,Other / Unknown,Low Priority,1,area type unclear
+The Parker,Mail Room,Mail Room,Office / Admin,High Priority,9,possible duplicate (case/spelling variant)
+The Parker,Mail room,Mail room,Office / Admin,High Priority,5,possible duplicate (case/spelling variant)
+The Parker,P3,P3,Other / Unknown,Low Priority,1,area type unclear; very short / unclear name
+The Parker,P3 Fridge,P3 Fridge,Other / Unknown,Low Priority,1,area type unclear
+The Parker,P3 Lunch Room,P3 Lunch Room,Other / Unknown,Low Priority,1,area type unclear
+The Parker,PARKER PLAQUE,PARKER PLAQUE,Other / Unknown,Low Priority,1,area type unclear; possible duplicate (case/spelling variant)
+The Parker,PARKER Plaque,PARKER Plaque,Other / Unknown,Low Priority,2,area type unclear; possible duplicate (case/spelling variant)
+The Parker,"Resident doors, frames, thresholds","Resident doors, frames, thresholds",Other / Unknown,Low Priority,1,area type unclear
+The Parker,Ventilation and wallpaper around it,Ventilation and wallpaper around it,Other / Unknown,Low Priority,1,area type unclear
+Waverley,(all mopped areas),(all mopped areas),Other / Unknown,Low Priority,1,area type unclear; ambiguous / bundled naming
+Waverley,(building-wide),(building-wide),Other / Unknown,Low Priority,5,area type unclear; ambiguous / bundled naming
+Waverley,2nd Floor STOA,2nd Floor STOA,Other / Unknown,Low Priority,3,area type unclear
+Waverley,Bike Room,Bike Room,Other / Unknown,High Priority,6,area type unclear
+Waverley,Carpets,Carpets,Other / Unknown,Low Priority,4,area type unclear
+Waverley,Floor (8th-3rd),Floor (8th-3rd),Other / Unknown,Low Priority,2,area type unclear
+Waverley,Floors (15th-9th),Floors (15th-9th),Other / Unknown,Low Priority,2,area type unclear
+Waverley,Glass/mirrors 15th and 2nd Level,Glass/mirrors 15th and 2nd Level,Other / Unknown,Low Priority,1,area type unclear
+Waverley,Glass/mirrors PH Level,Glass/mirrors PH Level,Other / Unknown,Low Priority,1,area type unclear
+Waverley,Mezzanine (M) Level The Gallery,Mezzanine (M) Level The Gallery,Other / Unknown,Low Priority,3,area type unclear
+Waverley,Mezzanine (M) Level The Reel,Mezzanine (M) Level The Reel,Other / Unknown,Low Priority,3,area type unclear
+Waverley,SB Level Beauty for the Beast,SB Level Beauty for the Beast,Other / Unknown,Low Priority,3,area type unclear
+Waverley,SB Level Bike Room,SB Level Bike Room,Other / Unknown,Low Priority,3,area type unclear
+Waverley,Sitting Area,Sitting Area,Other / Unknown,High Priority,6,area type unclear

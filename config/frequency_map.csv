@@ -1,0 +1,11 @@
+raw_frequency,frequency_canonical,is_defined
+Daily,Daily,true
+Weekly,Weekly,true
+2x/week,2x/Week,true
+Monthly,Monthly,true
+Seasonal,Seasonal,true
+As requested,On-demand,true
+As required,On-demand,true
+As needed,On-demand,true
+When cleaning,On-demand,true
+Unknown,Unknown,false

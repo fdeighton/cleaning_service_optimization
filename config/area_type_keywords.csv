@@ -1,0 +1,69 @@
+keyword,area_type
+washroom,Washroom
+restroom,Washroom
+toilet,Washroom
+elevator,Vertical Transport
+chute,Vertical Transport
+stair,Circulation
+corridor,Circulation
+hallway,Circulation
+exit,Circulation
+breezeway,Circulation
+lobby,Lobby / Entrance
+entrance,Lobby / Entrance
+enterphone,Lobby / Entrance
+entry,Lobby / Entrance
+front,Lobby / Entrance
+parking,Parking
+garage,Parking
+p1,Parking
+p2,Parking
+p3,Parking
+patio,Amenity - Outdoor
+pool,Amenity - Outdoor
+barbeque,Amenity - Outdoor
+bbq,Amenity - Outdoor
+dog run,Amenity - Outdoor
+dog exit,Amenity - Outdoor
+cafe,Amenity - Indoor
+yoga,Amenity - Indoor
+games room,Amenity - Indoor
+gym,Amenity - Indoor
+fitness,Amenity - Indoor
+kitchen,Amenity - Indoor
+party room,Amenity - Indoor
+entertainment,Amenity - Indoor
+dog spa,Amenity - Indoor
+pet spa,Amenity - Indoor
+lounge,Amenity - Indoor
+suite,Residential / Suites
+unit,Residential / Suites
+storage,Back-of-House
+housekeeping,Back-of-House
+mail,Back-of-House
+parcel,Back-of-House
+office,Back-of-House
+mngt,Back-of-House
+management,Back-of-House
+maintenance,Back-of-House
+loading dock,Back-of-House
+bike,Back-of-House
+plaque,Grounds / Exterior
+trash can,Grounds / Exterior
+garbage,Grounds / Exterior
+driveway,Grounds / Exterior
+grounds,Grounds / Exterior
+security,Lobby / Entrance
+sitting area,Amenity - Indoor
+terrace,Amenity - Outdoor
+dining,Amenity - Indoor
+meeting room,Amenity - Indoor
+basketball,Amenity - Indoor
+court,Amenity - Indoor
+pizza oven,Amenity - Indoor
+green house,Amenity - Indoor
+juice,Amenity - Indoor
+clinic,Amenity - Indoor
+amenit,Amenity - Indoor
+resident,Residential / Suites
+threshold,Circulation
