@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import glob
 import os
+from collections import Counter
 from datetime import datetime
 
 import pandas as pd
@@ -66,6 +67,18 @@ def _classify(loc):
     return "Unknown"
 
 
+def normalize_task(t):
+    """Collapse case/spacing variants; group long general-cleaning strings;
+    keep facility notes visible as 'No Explicit Task'. Display only — does not
+    change the underlying data."""
+    low = " ".join(str(t).strip().lower().split())
+    if not low or "no explicit" in low or low in ("n/a", "none", "-"):
+        return "No Explicit Task"
+    if low.startswith("empty trash") or ("dust" in low and "disinfect" in low):
+        return "General Cleaning"
+    return low[:1].upper() + low[1:]
+
+
 @st.cache_data(show_spinner=False)
 def list_datasets():
     return sorted(p for p in glob.glob(os.path.join(SCHEDULE_DIR, "*.csv"))
@@ -95,19 +108,17 @@ def load(path):
     at = _pick(raw, "area_type")
     if at:
         df["Area Type"] = raw[at].astype(str).str.strip(); found["Area Type"] = at
-        derived_area = False
     else:
-        df["Area Type"] = df["Location"].apply(_classify); derived_area = True
+        df["Area Type"] = df["Location"].apply(_classify)
 
-    report = {"found": found, "derived_area": derived_area, "rows": len(df),
+    report = {"found": found, "rows": len(df),
               "updated": datetime.fromtimestamp(os.path.getmtime(path)).strftime("%b %d, %Y · %H:%M"),
-              "missing_required": [c for c in ("Employee", "Location")
-                                   if c not in found]}
+              "missing_required": [c for c in ("Employee", "Location") if c not in found]}
     return df, report
 
 
 def coverage_split(df):
-    if "" == df["Employee"].iloc[0] and df["Employee"].eq("").all():
+    if df["Employee"].eq("").all():
         return pd.Series(dtype=int), pd.Series(dtype=int), 0.0
     per = df[df["Employee"] != ""].groupby("Location")["Employee"].nunique()
     return per[per > 1], per[per == 1], (round(float(per.mean()), 2) if len(per) else 0.0)
@@ -123,13 +134,10 @@ def volume(series, label, top=None):
 def employee_footprint(df):
     out = []
     for emp, g in df[df["Employee"] != ""].groupby("Employee"):
-        out.append({
-            "Employee": emp,
-            "Assignments": len(g),
-            "Locations": g["Location"].nunique(),
-            "Areas": ", ".join(g["Area Type"].value_counts().index[:2]),
-            "TopLocations": "; ".join(g["Location"].value_counts().index[:3]),
-        })
+        out.append({"Employee": emp, "Assignments": len(g),
+                    "Locations": g["Location"].nunique(),
+                    "Areas": ", ".join(g["Area Type"].value_counts().index[:2]),
+                    "TopLocations": "; ".join(g["Location"].value_counts().index[:3])})
     return sorted(out, key=lambda r: -r["Assignments"])
 
 
@@ -138,14 +146,25 @@ def area_ownership(df):
     for loc, g in df.groupby("Location"):
         emps = g.loc[g["Employee"] != "", "Employee"]
         ec = emps.nunique()
-        rows.append({
-            "Area": loc,
-            "Area Type": g["Area Type"].mode().iat[0] if len(g) else "",
-            "Primary Employee": emps.value_counts().index[0] if len(emps) else "—",
-            "Shared / Exclusive": "Shared" if ec > 1 else "Exclusive",
-            "Assignment Count": len(g),
-        })
+        rows.append({"Area": loc,
+                     "Area Type": g["Area Type"].mode().iat[0] if len(g) else "",
+                     "Primary Employee": emps.value_counts().index[0] if len(emps) else "—",
+                     "Shared / Exclusive": "Shared" if ec > 1 else "Exclusive",
+                     "Assignment Count": len(g)})
     return pd.DataFrame(rows).sort_values("Assignment Count", ascending=False, ignore_index=True)
+
+
+def shared_coverage_table(df, shared):
+    rows = [{"Location": loc,
+             "Employees": ", ".join(sorted(df[df["Location"] == loc]["Employee"].unique())),
+             "Employee Count": int(n)} for loc, n in shared.sort_values(ascending=False).items()]
+    return pd.DataFrame(rows or None, columns=["Location", "Employees", "Employee Count"])
+
+
+def exclusive_coverage_table(df, exclusive):
+    rows = [{"Location": loc, "Employee": df[df["Location"] == loc]["Employee"].iloc[0]}
+            for loc in exclusive.index]
+    return pd.DataFrame(rows or None, columns=["Location", "Employee"])
 
 
 def candidate_review(df):
@@ -171,8 +190,23 @@ def candidate_review(df):
             rows.append({"Review": "Candidate Review", "Location": loc, "Area Type": area,
                          "Pattern": "; ".join(pats),
                          "Detail": f"{len(g)} assignments · {ec} employee(s)"})
-    return pd.DataFrame(rows, columns=cols).sort_values("Location", ignore_index=True) \
-        if rows else pd.DataFrame(columns=cols)
+    df_out = (pd.DataFrame(rows, columns=cols)
+              .sort_values("Location", ignore_index=True) if rows else pd.DataFrame(columns=cols))
+    # sort detailed rows by assignment volume hint (extract leading int)
+    if len(df_out):
+        df_out["_n"] = df_out["Detail"].str.extract(r"(\d+)").astype(int)
+        df_out = df_out.sort_values("_n", ascending=False, ignore_index=True).drop(columns="_n")
+    return df_out
+
+
+def review_pattern_summary(rev):
+    pat = Counter()
+    for p in rev["Pattern"]:
+        for x in str(p).split("; "):
+            if x:
+                pat[x] += 1
+    return pd.DataFrame(sorted(pat.items(), key=lambda kv: -kv[1]),
+                        columns=["Review Pattern", "Locations"])
 
 
 # ---------------------------------------------------------------------------
@@ -190,21 +224,17 @@ def inject_css():
     [data-testid="stSidebar"] * {{ color: #EFEAE2 !important; }}
     [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {{ color: {ACCENT} !important;
         text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; }}
-    /* readable input boxes: white background, black text inside the dark sidebar */
     [data-testid="stSidebar"] div[data-baseweb="select"] > div {{
         background: #FFFFFF !important; border-color: {LINE} !important; border-radius: 8px; }}
     [data-testid="stSidebar"] div[data-baseweb="select"] * {{ color: {INK} !important; }}
     [data-testid="stSidebar"] div[data-baseweb="select"] svg {{ fill: {INK} !important; }}
-    [data-testid="stSidebar"] div[data-baseweb="select"] [data-baseweb="tag"] {{
-        background: {ACCENT} !important; }}
-    [data-testid="stSidebar"] div[data-baseweb="select"] [data-baseweb="tag"] * {{
-        color: #FFFFFF !important; }}
+    [data-testid="stSidebar"] div[data-baseweb="select"] [data-baseweb="tag"] {{ background: {ACCENT} !important; }}
+    [data-testid="stSidebar"] div[data-baseweb="select"] [data-baseweb="tag"] * {{ color: #FFFFFF !important; }}
 
-    .hero {{ background: {INK}; border-radius: 16px; padding: 30px 34px; margin-bottom: 22px;
+    .hero {{ background: {INK}; border-radius: 16px; padding: 30px 34px; margin-bottom: 20px;
         position: relative; overflow: hidden; }}
     .hero:before {{ content:''; position:absolute; left:0; top:0; bottom:0; width:6px; background:{ACCENT}; }}
-    .hero-eyebrow {{ color:{ACCENT}; font-weight:700; letter-spacing:.22em; font-size:.72rem;
-        text-transform:uppercase; }}
+    .hero-eyebrow {{ color:{ACCENT}; font-weight:700; letter-spacing:.22em; font-size:.72rem; text-transform:uppercase; }}
     .hero-title {{ color:#FFF; font-size:2.15rem; font-weight:800; line-height:1.1; margin:.25rem 0 .15rem; }}
     .hero-sub {{ color:#B9B1A6; font-size:1.02rem; font-weight:400; }}
     .hero-meta {{ margin-top:18px; display:flex; gap:34px; flex-wrap:wrap; }}
@@ -212,7 +242,14 @@ def inject_css():
     .hero-meta b {{ display:block; color:#FFF; font-size:1.05rem; letter-spacing:0; text-transform:none;
         font-weight:600; margin-top:3px; }}
 
-    .sec {{ margin: 30px 0 12px; }}
+    .takeaways {{ background:{CARD}; border:1px solid {LINE}; border-left:5px solid {ACCENT};
+        border-radius:13px; padding:18px 24px 16px; margin-bottom:6px; box-shadow:0 1px 2px rgba(20,20,18,.04); }}
+    .takeaways h4 {{ margin:0 0 8px; font-size:.74rem; text-transform:uppercase; letter-spacing:.14em; color:{ACCENT_DK}; }}
+    .takeaways ul {{ margin:0; padding-left:20px; }}
+    .takeaways li {{ font-size:.98rem; color:{INK}; margin:7px 0; line-height:1.45; }}
+    .takeaways li b {{ color:{ACCENT_DK}; }}
+
+    .sec {{ margin: 28px 0 12px; }}
     .sec h2 {{ font-size:1.18rem; font-weight:700; color:{INK}; margin:0; padding-left:13px;
         border-left:4px solid {ACCENT}; line-height:1.15; }}
     .sec p {{ margin:.3rem 0 0 17px; color:{MUTED}; font-size:.86rem; }}
@@ -223,7 +260,7 @@ def inject_css():
     .kpi .v {{ font-size:1.95rem; font-weight:800; color:{INK}; line-height:1; }}
     .kpi .l {{ font-size:.82rem; font-weight:600; color:{INK}; margin-top:9px; }}
     .kpi .s {{ font-size:.72rem; color:{MUTED}; margin-top:2px; }}
-    .kpi.accent {{ }} .kpi.accent .v {{ color:{ACCENT_DK}; }}
+    .kpi.accent .v {{ color:{ACCENT_DK}; }}
 
     .note {{ background:#FBF4EC; border:1px solid #F1DBC4; border-left:4px solid {ACCENT};
         border-radius:10px; padding:12px 16px; color:#6B5b48; font-size:.86rem; margin-top:14px; }}
@@ -243,8 +280,7 @@ def inject_css():
         border:1px solid {LINE}; border-radius:13px; overflow:hidden; }}
     .ready > div {{ padding:18px 22px; }}
     .ready > div + div {{ border-left:1px solid {LINE}; }}
-    .ready h4 {{ font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; color:{MUTED};
-        margin:0 0 12px; }}
+    .ready h4 {{ font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; color:{MUTED}; margin:0 0 12px; }}
     .ready li {{ list-style:none; font-size:.9rem; color:{INK}; margin:7px 0; }}
     .ready .yes:before {{ content:'\\2713'; color:{ACCENT}; font-weight:800; margin-right:9px; }}
     .ready .no:before {{ content:'\\25A1'; color:#B9B1A6; margin-right:9px; }}
@@ -260,35 +296,34 @@ def section(title, subtitle):
 def kpi_row(cards):
     html = "<div class='kpis'>"
     for v, l, s, accent in cards:
-        cls = "kpi accent" if accent else "kpi"
-        html += f"<div class='{cls}'><div class='v'>{v}</div><div class='l'>{l}</div><div class='s'>{s}</div></div>"
+        html += (f"<div class='{'kpi accent' if accent else 'kpi'}'><div class='v'>{v}</div>"
+                 f"<div class='l'>{l}</div><div class='s'>{s}</div></div>")
     st.markdown(html + "</div>", unsafe_allow_html=True)
 
 
-def style_chart(frame, label):
-    fig = px.bar(frame, x="Assignment Count", y=label, orientation="h", text="Assignment Count")
+def hbar(frame, label, value="Assignment Count"):
+    fig = px.bar(frame, x=value, y=label, orientation="h", text=value)
     fig.update_traces(marker_color=ACCENT, marker_line_width=0, textposition="outside",
                       textfont=dict(color=MUTED, size=11), cliponaxis=False)
-    fig.update_layout(
-        height=46 * len(frame) + 70, margin=dict(t=6, b=6, l=6, r=30),
-        paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-        font=dict(family="Inter, Segoe UI, sans-serif", color=INK, size=13),
-        xaxis=dict(visible=False),
-        yaxis=dict(categoryorder="total ascending", title=None,
-                   tickfont=dict(color=INK, size=12.5)),
-        bargap=0.32,
-    )
+    fig.update_layout(height=44 * len(frame) + 60, margin=dict(t=6, b=6, l=6, r=30),
+                      paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+                      font=dict(family="Inter, Segoe UI, sans-serif", color=INK, size=13),
+                      xaxis=dict(visible=False),
+                      yaxis=dict(categoryorder="total ascending", title=None,
+                                 tickfont=dict(color=INK, size=12.5)))
     st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
 
 
 def table(frame, height=None):
-    st.dataframe(frame, hide_index=True, width="stretch",
-                 height=height if height else None)
+    if height is None:
+        st.dataframe(frame, hide_index=True, width="stretch")
+    else:
+        st.dataframe(frame, hide_index=True, width="stretch", height=height)
 
 
-# ---------------------------------------------------------------------------
+# ===========================================================================
 # App
-# ---------------------------------------------------------------------------
+# ===========================================================================
 inject_css()
 
 datasets = list_datasets()
@@ -302,13 +337,9 @@ labels = {os.path.basename(p).replace("_cleaning_responsibilities.csv", "").repl
 st.sidebar.markdown("### Property")
 choice = st.sidebar.selectbox("Schedule dataset", sorted(labels), label_visibility="collapsed")
 df, rep = load(labels[choice])
-
-# graceful schema warnings
 if rep["missing_required"]:
-    st.warning(f"Missing required field(s): {', '.join(rep['missing_required'])}. "
-               "Some sections may be limited.")
+    st.warning(f"Missing required field(s): {', '.join(rep['missing_required'])}. Some sections may be limited.")
 
-# filters
 st.sidebar.markdown("### Filters")
 if df["Property"].nunique() > 1:
     chosen = st.sidebar.multiselect("Property", sorted(df["Property"].unique()),
@@ -332,6 +363,11 @@ if df.empty:
 
 prop_name = " / ".join(sorted(df["Property"].unique()))
 shared, exclusive, avg_emp = coverage_split(df)
+area_counts = df["Area Type"].value_counts()
+emp_counts = df.loc[df["Employee"] != "", "Employee"].value_counts()
+total_loc = df["Location"].nunique()
+sh, ex = int(len(shared)), int(len(exclusive))
+sh_pct = round(100 * sh / total_loc) if total_loc else 0
 
 # ---- Hero ----
 st.markdown(f"""
@@ -347,75 +383,111 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# ---- Section 1: Executive Summary ----
-section("Executive Summary", "The shape of this property's scheduled cleaning operation at a glance.")
+# ---- A. Key Takeaways ----
+bullets = []
+if len(area_counts):
+    bullets.append(f"Scheduled attention centers on <b>{area_counts.index[0]}</b> areas — "
+                   f"{round(100 * area_counts.iloc[0] / len(df))}% of all assignments.")
+if len(emp_counts):
+    bullets.append(f"<b>{emp_counts.index[0]}</b> carries the most of the standing schedule "
+                   f"({int(emp_counts.iloc[0])} assignments).")
+bullets.append(f"<b>{sh} of {total_loc}</b> locations ({sh_pct}%) have shared coverage; "
+               f"<b>{ex}</b> are exclusively covered by one person.")
+bullets.append("This view describes <b>coverage and ownership</b> only — without square footage, task "
+               "times, or service standards, it cannot yet support workload or staffing analysis.")
+st.markdown("<div class='takeaways'><h4>Key Takeaways</h4><ul>"
+            + "".join(f"<li>{b}</li>" for b in bullets) + "</ul></div>", unsafe_allow_html=True)
+
+# ---- B. Executive Metrics ----
+section("Executive Metrics", "The shape of this property's scheduled cleaning operation at a glance.")
 kpi_row([
     (f"{len(df):,}", "Schedule Assignments", "scheduled cleaning tasks", True),
-    (df.loc[df["Employee"] != "", "Employee"].nunique(), "Employees", "people on the schedule", False),
-    (df["Location"].nunique(), "Locations", "distinct areas serviced", False),
+    (int(emp_counts.size), "Employees", "people on the schedule", False),
+    (total_loc, "Locations", "distinct areas serviced", False),
     (df["Area Type"].nunique(), "Area Types", "categories of space", False),
-    (int(len(shared)), "Shared Locations", "served by 2+ people", False),
-    (int(len(exclusive)), "Exclusive Locations", "served by one person", False),
+    (sh, "Shared Locations", "served by 2+ people", False),
+    (ex, "Exclusive Locations", "served by one person", False),
 ])
 st.markdown("<div class='note'>This dashboard describes scheduled cleaning coverage and ownership. "
             "It does not measure workload, labor effort, productivity, or staffing efficiency.</div>",
             unsafe_allow_html=True)
 
-# ---- Section 2: Cleaning Volume ----
+# ---- C. Cleaning Volume ----
 section("Cleaning Volume", "Where scheduled attention is concentrated — by assignment count, not effort.")
-col1, col2 = st.columns(2)
-with col1:
+c1, c2 = st.columns(2)
+with c1:
     st.markdown("**Top Locations**")
-    style_chart(volume(df["Location"], "Location", 10), "Location")
-with col2:
+    hbar(volume(df["Location"], "Location", 10), "Location")
+    st.caption(f"A small set of common areas — led by {df['Location'].value_counts().index[0]} — "
+               "receives the most scheduled visits.")
+with c2:
     st.markdown("**Area Type Distribution**")
-    style_chart(volume(df["Area Type"], "Area Type"), "Area Type")
+    hbar(volume(df["Area Type"], "Area Type"), "Area Type")
+    st.caption(f"{area_counts.index[0]} spaces account for the largest share of scheduled assignments.")
 st.markdown("**Top Tasks**")
-style_chart(volume(df["Task"], "Task", 10), "Task")
+hbar(volume(df["Task"].apply(normalize_task), "Task", 10), "Task")
+st.caption("Task labels are grouped (general-cleaning variants collapse into 'General Cleaning'); "
+           "routine general cleaning dominates the schedule.")
 
-# ---- Section 3: Ownership & Responsibility ----
+# ---- D. Ownership ----
 section("Ownership & Responsibility", "Who is responsible for which parts of the building.")
 foot = employee_footprint(df)
 if foot:
     html = "<div class='emps'>"
     for e in foot:
         html += (f"<div class='emp'><div class='n'>{e['Employee']}</div>"
-                 f"<div class='row'><div><div class='v'>{e['Assignments']}</div>"
-                 f"<div class='l'>Assignments</div></div>"
+                 f"<div class='row'><div><div class='v'>{e['Assignments']}</div><div class='l'>Assignments</div></div>"
                  f"<div><div class='v'>{e['Locations']}</div><div class='l'>Locations</div></div></div>"
                  f"<div class='meta'>Primary area types: <b>{e['Areas'] or '—'}</b></div>"
                  f"<div class='meta'>Key areas: {e['TopLocations'] or '—'}</div></div>")
     st.markdown(html + "</div>", unsafe_allow_html=True)
-st.markdown("<br>**Area Ownership** — who owns each area", unsafe_allow_html=True)
-table(area_ownership(df), height=360)
+st.caption("Assignment counts show how the standing schedule is distributed across the team — not effort or hours.")
+own = area_ownership(df)
+st.markdown("<br>**Area Ownership** — top 10 areas by assignment count", unsafe_allow_html=True)
+table(own.head(10))
+st.caption("Each area's primary employee and whether it is shared or exclusively covered.")
+with st.expander("View full detail — all areas"):
+    table(own, height=420)
 
-# ---- Section 4: Coverage Structure ----
-section("Coverage Structure", "How responsibility is distributed: exclusive vs shared coverage.")
+# ---- E. Shared vs Exclusive Coverage ----
+section("Shared vs Exclusive Coverage", "How responsibility is distributed across the team.")
 kpi_row([
-    (int(len(shared)), "Shared Locations", "two or more employees", True),
-    (int(len(exclusive)), "Exclusive Locations", "single employee", False),
+    (sh, "Shared Locations", "two or more employees", True),
+    (ex, "Exclusive Locations", "single employee", False),
     (avg_emp, "Avg Employees / Location", "mean coverage breadth", False),
 ])
-c1, c2 = st.columns(2)
-with c1:
-    st.markdown("**Shared Coverage**")
-    rows = [{"Location": loc, "Employees": ", ".join(sorted(df[df["Location"] == loc]["Employee"].unique())),
-             "Employee Count": int(n)} for loc, n in shared.sort_values(ascending=False).items()]
-    table(pd.DataFrame(rows or None, columns=["Location", "Employees", "Employee Count"]), height=300)
-with c2:
-    st.markdown("**Exclusive Coverage**")
-    rows = [{"Location": loc, "Employee": df[df["Location"] == loc]["Employee"].iloc[0]}
-            for loc in exclusive.index]
-    table(pd.DataFrame(rows or None, columns=["Location", "Employee"]), height=300)
+shared_df = shared_coverage_table(df, shared)
+excl_df = exclusive_coverage_table(df, exclusive)
+e1, e2 = st.columns(2)
+with e1:
+    st.markdown("**Shared Coverage** — top 10")
+    table(shared_df.head(10))
+    with st.expander("View full detail — all shared locations"):
+        table(shared_df, height=400)
+with e2:
+    st.markdown("**Exclusive Coverage** — top 10")
+    table(excl_df.head(10))
+    with st.expander("View full detail — all exclusive locations"):
+        table(excl_df, height=400)
+st.caption(f"{sh_pct}% of locations have shared coverage; the remainder are covered by a single person.")
 
-# ---- Section 5: Candidate Review Items ----
-section("Candidate Review Items", "Schedule patterns worth a human glance. Informational only — not findings.")
+# ---- F. Candidate Review (compact) ----
+section("Candidate Review", "Schedule patterns worth a human glance — informational only, not findings.")
 rev = candidate_review(df)
-table(rev, height=300)
-st.caption(f"{len(rev)} location(s) flagged for review. These are patterns to look at, "
-           "not waste, redundancy, or inefficiency.")
+pat_df = review_pattern_summary(rev)
+if len(pat_df):
+    cap, _spacer = st.columns([2, 1])
+    with cap:
+        hbar(pat_df, "Review Pattern", value="Locations")
+st.caption(f"{len(rev)} locations show at least one pattern to review across "
+           f"{len(pat_df)} pattern type(s). These are observations, not problems.")
+with st.expander("View candidate locations (top 10 and full detail)"):
+    st.markdown("**Top candidate locations**")
+    table(rev.head(10))
+    st.markdown("**All candidate review items**")
+    table(rev, height=360)
 
-# ---- Section 6: Data Readiness ----
+# ---- G. Data Readiness ----
 section("Current Analytical Capability", "What this schedule data can and cannot support today.")
 st.markdown("""
 <div class='ready'>
