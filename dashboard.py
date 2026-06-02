@@ -265,6 +265,15 @@ def inject_css():
     .note {{ background:#FBF4EC; border:1px solid #F1DBC4; border-left:4px solid {ACCENT};
         border-radius:10px; padding:12px 16px; color:#6B5b48; font-size:.86rem; margin-top:14px; }}
 
+    .vstrip {{ display:flex; background:{CARD}; border:1px solid {LINE}; border-radius:12px;
+        overflow:hidden; margin-top:6px; }}
+    .vstrip > div {{ flex:1; padding:12px 18px; }}
+    .vstrip > div + div {{ border-left:1px solid {LINE}; }}
+    .vstrip .l {{ font-size:.66rem; text-transform:uppercase; letter-spacing:.1em; color:{MUTED}; }}
+    .vstrip .v {{ font-size:1.02rem; font-weight:700; color:{INK}; margin-top:3px;
+        white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }}
+    [data-testid="stPlotlyChart"] {{ margin-top:-6px; }}
+
     .emps {{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }}
     .emp {{ background:{CARD}; border:1px solid {LINE}; border-radius:13px; padding:16px 18px;
         box-shadow:0 1px 2px rgba(20,20,18,.04); }}
@@ -311,6 +320,50 @@ def hbar(frame, label, value="Assignment Count"):
                       xaxis=dict(visible=False),
                       yaxis=dict(categoryorder="total ascending", title=None,
                                  tickfont=dict(color=INK, size=12.5)))
+    st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
+
+
+def smart_case(s):
+    if s.isupper():
+        return s.title()
+    return " ".join(w.capitalize() if w.islower() else w for w in s.split())
+
+
+def short_label(s, n=22):
+    """Trim trailing qualifiers and tidy case for a compact axis label."""
+    cut = str(s)
+    for sep in (" w/", " w\\", " (", " - ", " with ", ",", " & "):
+        i = cut.find(sep)
+        if i > 2:
+            cut = cut[:i]
+    cut = smart_case(cut.strip())
+    return cut if len(cut) <= n else cut[:n - 1].rstrip() + "…"
+
+
+def _dedup(labels):
+    out, seen = [], {}
+    for l in labels:
+        seen[l] = seen.get(l, -1) + 1
+        out.append(l + " " * seen[l] if seen[l] else l)
+    return out
+
+
+def mini_bar(frame, cat_col, height=260):
+    """Compact, identical bar chart: top rows, values on bars, full value on hover."""
+    f = frame.copy()
+    f["__d"] = _dedup([short_label(x) for x in f[cat_col]])
+    fig = px.bar(f, x="Assignment Count", y="__d", orientation="h",
+                 text="Assignment Count", custom_data=[cat_col])
+    fig.update_traces(marker_color=ACCENT, marker_line_width=0, textposition="outside",
+                      textfont=dict(color=MUTED, size=10), cliponaxis=False,
+                      hovertemplate="%{customdata[0]}<br>Assignment Count: %{x}<extra></extra>")
+    fig.update_layout(height=height, margin=dict(t=2, b=2, l=2, r=18),
+                      paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+                      font=dict(family="Inter, Segoe UI, sans-serif", color=INK, size=11),
+                      xaxis=dict(visible=False),
+                      yaxis=dict(categoryorder="total ascending", title=None,
+                                 tickfont=dict(color=INK, size=10.5)),
+                      uniformtext_minsize=8, uniformtext_mode="hide")
     st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
 
 
@@ -413,21 +466,27 @@ st.markdown("<div class='note'>This dashboard describes scheduled cleaning cover
             unsafe_allow_html=True)
 
 # ---- C. Cleaning Volume ----
-section("Cleaning Volume", "Where scheduled attention is concentrated — by assignment count, not effort.")
-c1, c2 = st.columns(2)
-with c1:
+section("Cleaning Volume",
+        "Scheduled activity is concentrated in a small number of locations, area types, "
+        "and recurring task categories.")
+task_norm = df["Task"].apply(normalize_task)
+vc1, vc2, vc3 = st.columns(3)
+with vc1:
     st.markdown("**Top Locations**")
-    hbar(volume(df["Location"], "Location", 10), "Location")
-    st.caption(f"A small set of common areas — led by {df['Location'].value_counts().index[0]} — "
-               "receives the most scheduled visits.")
-with c2:
+    mini_bar(volume(df["Location"], "Location", 5), "Location")
+with vc2:
     st.markdown("**Area Type Distribution**")
-    hbar(volume(df["Area Type"], "Area Type"), "Area Type")
-    st.caption(f"{area_counts.index[0]} spaces account for the largest share of scheduled assignments.")
-st.markdown("**Top Tasks**")
-hbar(volume(df["Task"].apply(normalize_task), "Task", 10), "Task")
-st.caption("Task labels are grouped (general-cleaning variants collapse into 'General Cleaning'); "
-           "routine general cleaning dominates the schedule.")
+    mini_bar(volume(df["Area Type"], "Area Type", 5), "Area Type")
+with vc3:
+    st.markdown("**Top Tasks**")
+    mini_bar(volume(task_norm, "Task", 5), "Task")
+st.markdown(f"""
+<div class='vstrip'>
+  <div><div class='l'>Highest Volume Area</div><div class='v'>{area_counts.index[0]}</div></div>
+  <div><div class='l'>Highest Volume Location</div><div class='v'>{df['Location'].value_counts().index[0]}</div></div>
+  <div><div class='l'>Most Common Task</div><div class='v'>{task_norm.value_counts().index[0]}</div></div>
+</div>
+""", unsafe_allow_html=True)
 
 # ---- D. Ownership ----
 section("Ownership & Responsibility", "Who is responsible for which parts of the building.")
