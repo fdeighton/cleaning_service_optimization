@@ -75,6 +75,8 @@ def normalize_task(t):
     low = " ".join(str(t).strip().lower().split())
     if not low or "no explicit" in low or low in ("n/a", "none", "-"):
         return "No Explicit Task"
+    if low == "emptied":
+        return "Emptied Garbages"
     if low.startswith("empty trash") or ("dust" in low and "disinfect" in low):
         return "General Cleaning"
     return low[:1].upper() + low[1:]
