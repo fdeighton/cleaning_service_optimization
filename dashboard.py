@@ -190,6 +190,15 @@ def inject_css():
     [data-testid="stSidebar"] * {{ color: #EFEAE2 !important; }}
     [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {{ color: {ACCENT} !important;
         text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; }}
+    /* readable input boxes: white background, black text inside the dark sidebar */
+    [data-testid="stSidebar"] div[data-baseweb="select"] > div {{
+        background: #FFFFFF !important; border-color: {LINE} !important; border-radius: 8px; }}
+    [data-testid="stSidebar"] div[data-baseweb="select"] * {{ color: {INK} !important; }}
+    [data-testid="stSidebar"] div[data-baseweb="select"] svg {{ fill: {INK} !important; }}
+    [data-testid="stSidebar"] div[data-baseweb="select"] [data-baseweb="tag"] {{
+        background: {ACCENT} !important; }}
+    [data-testid="stSidebar"] div[data-baseweb="select"] [data-baseweb="tag"] * {{
+        color: #FFFFFF !important; }}
 
     .hero {{ background: {INK}; border-radius: 16px; padding: 30px 34px; margin-bottom: 22px;
         position: relative; overflow: hidden; }}
