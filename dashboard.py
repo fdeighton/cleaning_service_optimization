@@ -284,15 +284,16 @@ def inject_css():
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
     html, body, [class*="css"] {{ font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; }}
     .stApp {{ background: {PAGE}; }}
-    /* hide chrome but NOT the header itself (it holds the sidebar expand arrow) */
-    #MainMenu, footer, [data-testid="stToolbar"], [data-testid="stDecoration"],
-    [data-testid="stStatusWidget"], [data-testid="manage-app-button"],
-    .stAppDeployButton, [class*="viewerBadge"] {{ display: none !important; }}
+    /* hide only the individual chrome items — NEVER the toolbar/header container,
+       which holds the sidebar expand arrow (hiding the container deletes it) */
+    [data-testid="stMainMenu"], [data-testid="stAppDeployButton"], [data-testid="stStatusWidget"],
+    [data-testid="stDecoration"], [data-testid="stToolbarActions"], footer,
+    [data-testid="manage-app-button"], [class*="viewerBadge"] {{ display: none !important; }}
     [data-testid="stHeader"] {{ background: transparent; }}
-    /* always keep the sidebar expand/collapse controls visible & usable */
-    [data-testid="stExpandSidebarButton"], [data-testid="stSidebarCollapseButton"],
-    [data-testid="stSidebarCollapsedControl"], [data-testid="collapsedControl"] {{
-        visibility: visible !important; opacity: 1 !important; }}
+    /* always keep the sidebar expand/collapse controls visible & clickable */
+    [data-testid="stExpandSidebarButton"], [data-testid="stSidebarCollapseButton"] {{
+        visibility: visible !important; opacity: 1 !important; display: inline-flex !important;
+        z-index: 1000 !important; }}
     [data-testid="stExpandSidebarButton"] svg, [data-testid="stSidebarCollapseButton"] svg {{
         fill: {INK} !important; }}
     .block-container {{ padding-top: 1.1rem; padding-bottom: 3rem; max-width: 1340px; }}
