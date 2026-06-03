@@ -37,7 +37,8 @@ LINE = "#E7E2D9"
 CARD = "#FFFFFF"
 PAGE = "#F5F2EC"
 
-st.set_page_config(page_title="Fitzrovia · Cleaning Operations", page_icon=None, layout="wide")
+st.set_page_config(page_title="Fitzrovia · Cleaning Operations", page_icon=None,
+                   layout="wide", initial_sidebar_state="expanded")
 
 AMB_MARKERS = ("building-wide", "not specified", "all staff", "(all", "various", " etc", "n/a")
 
@@ -109,9 +110,16 @@ def list_datasets():
 
 
 @st.cache_data(show_spinner=False)
-def load(path):
+def _read_csv(path, _mtime):
     raw = pd.read_csv(path, dtype=str, keep_default_na=False)
     raw.columns = [c.strip() for c in raw.columns]
+    return raw
+
+
+def load(path):
+    """Read + normalize a schedule CSV. Classification runs here (uncached) so
+    area-type labels always reflect the current rules — no stale cached labels."""
+    raw = _read_csv(path, os.path.getmtime(path))
     df = pd.DataFrame(index=raw.index)
     found = {}
 
@@ -276,13 +284,14 @@ def inject_css():
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
     html, body, [class*="css"] {{ font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; }}
     .stApp {{ background: {PAGE}; }}
-    #MainMenu, header, footer {{ visibility: hidden; }}
-    [data-testid="manage-app-button"], [data-testid="stToolbar"],
-    [data-testid="stStatusWidget"], .stAppDeployButton, .viewerBadge_container__1QSob,
-    [class*="viewerBadge"] {{ display: none !important; visibility: hidden !important; }}
-    /* keep the sidebar expand arrow usable after the sidebar is collapsed */
+    /* hide chrome but NOT the header itself (it holds the sidebar expand arrow) */
+    #MainMenu, footer, [data-testid="stToolbar"], [data-testid="stDecoration"],
+    [data-testid="stStatusWidget"], [data-testid="manage-app-button"],
+    .stAppDeployButton, [class*="viewerBadge"] {{ display: none !important; }}
+    [data-testid="stHeader"] {{ background: transparent; }}
+    /* always keep the sidebar expand arrow visible & usable */
     [data-testid="stSidebarCollapsedControl"], [data-testid="collapsedControl"] {{
-        visibility: visible !important; }}
+        visibility: visible !important; display: block !important; }}
     [data-testid="stSidebarCollapsedControl"] svg, [data-testid="collapsedControl"] svg {{
         fill: {INK} !important; }}
     .block-container {{ padding-top: 1.1rem; padding-bottom: 3rem; max-width: 1340px; }}
