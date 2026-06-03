@@ -21,6 +21,7 @@ from datetime import datetime
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+import streamlit.components.v1 as components
 
 # ---------------------------------------------------------------------------
 # Config + Fitzrovia palette
@@ -460,6 +461,30 @@ def table(frame, height=None):
 # App
 # ===========================================================================
 inject_css()
+
+# Force the sidebar open on each page load/refresh, overriding any persisted
+# collapsed state. Runs once per page load (guarded), so it won't re-open the
+# sidebar if the user chooses to collapse it during the session.
+components.html("""
+<script>
+(function () {
+  try {
+    var p = window.parent;
+    if (!p || p.__forceSidebarOpenDone) return;
+    p.__forceSidebarOpenDone = true;
+    var tries = 0;
+    var iv = p.setInterval(function () {
+      tries++;
+      var doc = p.document;
+      var expand = doc.querySelector('[data-testid="stExpandSidebarButton"]');
+      var sidebar = doc.querySelector('[data-testid="stSidebar"]');
+      if (expand) { (expand.querySelector('button') || expand).click(); }
+      if (tries > 12 || (sidebar && !expand)) p.clearInterval(iv);
+    }, 150);
+  } catch (e) {}
+})();
+</script>
+""", height=0)
 
 datasets = list_datasets()
 if not datasets:
