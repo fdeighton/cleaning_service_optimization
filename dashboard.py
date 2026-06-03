@@ -252,7 +252,6 @@ def ambiguous_locations(df):
 
 def data_quality_counts(df, rev):
     return {
-        "misc_area": int((df["Area Type"] == "Miscellaneous").sum()),
         "no_explicit": int(df["Task"].str.lower().str.contains("no explicit", na=False).sum()),
         "unknown_freq": int((df["Frequency"].str.lower() == "unknown").sum()),
         "ambiguous": len(ambiguous_locations(df)),
@@ -625,8 +624,7 @@ with tab2:
 with tab3:
     section("Data Quality", "Where the schedule data is clear, and where it still needs review.")
     kpi_row([
-        (dq["misc_area"], "Miscellaneous Areas", "catch-all category", True),
-        (dq["no_explicit"], "No Explicit Task", "facility-note rows", False),
+        (dq["no_explicit"], "No Explicit Task", "facility-note rows", True),
         (dq["unknown_freq"], "Unknown Frequencies", "no stated cadence", False),
         (dq["ambiguous"], "Ambiguous Locations", "vague / building-wide names", False),
         (dq["candidates"], "Candidate Review Items", "locations to glance at", False),
@@ -645,16 +643,12 @@ with tab3:
         table(rev, height=360)
 
     section("Unknown Value Audit", "What still requires cleanup before deeper analysis.")
-    u1, u2, u3 = st.columns(3)
+    u1, u2 = st.columns(2)
     with u1:
-        st.markdown(f"**Miscellaneous Areas — {dq['misc_area']}**")
-        with st.expander("View locations"):
-            table(_unknown_by_location(df["Area Type"] == "Miscellaneous", df), height=320)
-    with u2:
         st.markdown(f"**No Explicit Task — {dq['no_explicit']}**")
         with st.expander("View locations"):
             table(_unknown_by_location(df["Task"].str.lower().str.contains("no explicit", na=False), df), height=320)
-    with u3:
+    with u2:
         st.markdown(f"**Unknown Frequencies — {dq['unknown_freq']}**")
         with st.expander("View locations"):
             table(_unknown_by_location(df["Frequency"].str.lower() == "unknown", df), height=320)
