@@ -289,10 +289,11 @@ def inject_css():
     [data-testid="stStatusWidget"], [data-testid="manage-app-button"],
     .stAppDeployButton, [class*="viewerBadge"] {{ display: none !important; }}
     [data-testid="stHeader"] {{ background: transparent; }}
-    /* always keep the sidebar expand arrow visible & usable */
+    /* always keep the sidebar expand/collapse controls visible & usable */
+    [data-testid="stExpandSidebarButton"], [data-testid="stSidebarCollapseButton"],
     [data-testid="stSidebarCollapsedControl"], [data-testid="collapsedControl"] {{
-        visibility: visible !important; display: block !important; }}
-    [data-testid="stSidebarCollapsedControl"] svg, [data-testid="collapsedControl"] svg {{
+        visibility: visible !important; opacity: 1 !important; }}
+    [data-testid="stExpandSidebarButton"] svg, [data-testid="stSidebarCollapseButton"] svg {{
         fill: {INK} !important; }}
     .block-container {{ padding-top: 1.1rem; padding-bottom: 3rem; max-width: 1340px; }}
     [data-testid="stSidebar"] {{ background: {INK}; }}
