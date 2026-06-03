@@ -68,7 +68,27 @@ def _classify(loc):
     for kw, area in _area_keywords():
         if kw in t:
             return area
-    return "Unknown"
+    return "Miscellaneous"
+
+
+def is_all_staff(e):
+    """'(all staff)' means everyone — a placeholder, not an individual employee."""
+    return "all staff" in str(e).lower()
+
+
+def real_employee_total(df):
+    e = df["Employee"]
+    return int(df.loc[(e != "") & (~e.apply(is_all_staff)), "Employee"].nunique())
+
+
+def _loc_coverage(g, real_total):
+    """Per-location coverage: '(all staff)' rows count as everyone, so such a
+    location is always Shared and can never be Exclusive."""
+    es = [e for e in g["Employee"].unique() if e]
+    real = {e for e in es if not is_all_staff(e)}
+    has_all = any(is_all_staff(e) for e in es)
+    eff = real_total if has_all else len(real)
+    return real, has_all, eff, ("Exclusive" if eff == 1 else "Shared")
 
 
 def normalize_task(t):
@@ -120,9 +140,20 @@ def load(path):
 
 def coverage_split(df):
     if df["Employee"].eq("").all():
-        return pd.Series(dtype=int), pd.Series(dtype=int), 0.0
-    per = df[df["Employee"] != ""].groupby("Location")["Employee"].nunique()
-    return per[per > 1], per[per == 1], (round(float(per.mean()), 2) if len(per) else 0.0)
+        return pd.Series(dtype=int), pd.Series(dtype=object), 0.0
+    rt = real_employee_total(df)
+    shared, exclusive, effs = {}, {}, []
+    for loc, g in df.groupby("Location"):
+        real, has_all, eff, cov = _loc_coverage(g, rt)
+        if eff <= 0:
+            continue
+        effs.append(eff)
+        if cov == "Shared":
+            shared[loc] = eff
+        else:
+            exclusive[loc] = next(iter(real)) if real else "(all staff)"
+    avg = round(sum(effs) / len(effs), 2) if effs else 0.0
+    return pd.Series(shared, dtype=int), pd.Series(exclusive, dtype=object), avg
 
 
 def volume(series, label, top=None):
@@ -134,7 +165,8 @@ def volume(series, label, top=None):
 
 def employee_footprint(df):
     out = []
-    for emp, g in df[df["Employee"] != ""].groupby("Employee"):
+    people = df[(df["Employee"] != "") & (~df["Employee"].apply(is_all_staff))]
+    for emp, g in people.groupby("Employee"):
         out.append({"Employee": emp, "Assignments": len(g),
                     "Locations": g["Location"].nunique(),
                     "AreaTypes": g["Area Type"].nunique(),
@@ -142,53 +174,59 @@ def employee_footprint(df):
     return sorted(out, key=lambda r: -r["Assignments"])
 
 
+def _emp_display(df, loc):
+    return sorted({("All staff" if is_all_staff(e) else e)
+                   for e in df[df["Location"] == loc]["Employee"].unique() if e})
+
+
 def area_ownership(df):
+    rt = real_employee_total(df)
     rows = []
     for loc, g in df.groupby("Location"):
-        emps = g.loc[g["Employee"] != "", "Employee"]
-        ec = emps.nunique()
+        real, has_all, eff, cov = _loc_coverage(g, rt)
+        if real:
+            primary = g[g["Employee"].isin(real)]["Employee"].value_counts().index[0]
+        else:
+            primary = "All staff" if has_all else "—"
         rows.append({"Location": loc,
                      "Area Type": g["Area Type"].mode().iat[0] if len(g) else "",
-                     "Primary Employee": emps.value_counts().index[0] if len(emps) else "—",
-                     "Shared / Exclusive": "Shared" if ec > 1 else "Exclusive",
+                     "Primary Employee": primary,
+                     "Shared / Exclusive": cov,
                      "Assignment Count": len(g)})
     return pd.DataFrame(rows).sort_values("Assignment Count", ascending=False, ignore_index=True)
 
 
 def shared_coverage_table(df, shared):
-    rows = [{"Location": loc,
-             "Employees": ", ".join(sorted(df[df["Location"] == loc]["Employee"].unique())),
+    rows = [{"Location": loc, "Employees": ", ".join(_emp_display(df, loc)),
              "Employee Count": int(n)} for loc, n in shared.sort_values(ascending=False).items()]
     return pd.DataFrame(rows or None, columns=["Location", "Employees", "Employee Count"])
 
 
 def exclusive_coverage_table(df, exclusive):
-    rows = [{"Location": loc, "Employee": df[df["Location"] == loc]["Employee"].iloc[0]}
-            for loc in exclusive.index]
+    rows = [{"Location": loc, "Employee": emp} for loc, emp in exclusive.items()]
     return pd.DataFrame(rows or None, columns=["Location", "Employee"])
 
 
 def candidate_review(df):
     cols = ["Review", "Location", "Area Type", "Pattern", "Detail"]
     bundle = (",", "&", " etc", "/", " and ")
+    rt = real_employee_total(df)
     rows = []
     for loc, g in df.groupby("Location"):
         low, area = loc.lower(), (g["Area Type"].mode().iat[0] if len(g) else "")
-        ec = g.loc[g["Employee"] != "", "Employee"].nunique()
+        real, has_all, eff, cov = _loc_coverage(g, rt)
         pats = []
-        if ec > 1:
+        if cov == "Shared":
             pats.append("Shared Coverage Pattern")
         if len(g) >= 4:
             pats.append("Repeated Coverage Pattern")
         if any(m in low for m in AMB_MARKERS) or len(loc.strip()) <= 3:
             pats.append("Ambiguous Location")
-        if area in ("Unknown", "Other / Unknown", "Unclassified", ""):
-            pats.append("Unknown Area Type")
         if g["Task"].apply(lambda t: any(b in (t or "").lower() for b in bundle)).any():
             pats.append("Bundled Task Description")
         if pats:
             rows.append({"Review": "Candidate Review", "Location": loc, "Area Type": area,
-                         "Pattern": "; ".join(pats), "Detail": f"{len(g)} assignments · {ec} employee(s)"})
+                         "Pattern": "; ".join(pats), "Detail": f"{len(g)} assignments · {eff} employee(s)"})
     out = pd.DataFrame(rows, columns=cols).sort_values("Location", ignore_index=True) if rows \
         else pd.DataFrame(columns=cols)
     if len(out):
@@ -214,7 +252,7 @@ def ambiguous_locations(df):
 
 def data_quality_counts(df, rev):
     return {
-        "unknown_area": int((df["Area Type"] == "Unknown").sum()),
+        "misc_area": int((df["Area Type"] == "Miscellaneous").sum()),
         "no_explicit": int(df["Task"].str.lower().str.contains("no explicit", na=False).sum()),
         "unknown_freq": int((df["Frequency"].str.lower() == "unknown").sum()),
         "ambiguous": len(ambiguous_locations(df)),
@@ -444,11 +482,12 @@ prop_name = " / ".join(sorted(df["Property"].unique()))
 shared, exclusive, avg_emp = coverage_split(df)
 area_counts = df["Area Type"].value_counts()
 loc_counts = df["Location"].value_counts()
-emp_counts = df.loc[df["Employee"] != "", "Employee"].value_counts()
+emp_counts = df.loc[(df["Employee"] != "") & (~df["Employee"].apply(is_all_staff)),
+                    "Employee"].value_counts()
 task_norm = df["Task"].apply(normalize_task)
-# Exclude unclassified / facility-note values from executive figures (they are
-# quantified instead on the Data Quality tab, so nothing is hidden).
-classified_area = area_counts.drop("Unknown", errors="ignore")
+# 'No Explicit Task' is a facility-note placeholder, excluded from the task chart
+# and quantified on the Data Quality tab. (Miscellaneous is a normal catch-all
+# area category and is shown like any other.)
 explicit_task = task_norm[task_norm != "No Explicit Task"].value_counts()
 total_loc = df["Location"].nunique()
 sh, ex = int(len(shared)), int(len(exclusive))
@@ -485,15 +524,15 @@ with tab1:
         (f"{len(df):,}", "Schedule Assignments", "scheduled cleaning tasks", True),
         (int(emp_counts.size), "Employees", "people on the schedule", False),
         (total_loc, "Locations", "distinct areas serviced", False),
-        (int(classified_area.size), "Area Types", "classified categories", False),
+        (df["Area Type"].nunique(), "Area Types", "categories of space", False),
         (sh, "Shared Locations", "served by 2+ people", False),
         (ex, "Exclusive Locations", "served by one person", False),
     ])
 
     bullets = []
-    if len(classified_area):
-        bullets.append(f"Scheduled attention centers on <b>{classified_area.index[0]}</b> areas — "
-                       f"{round(100 * classified_area.iloc[0] / len(df))}% of all assignments.")
+    if len(area_counts):
+        bullets.append(f"Scheduled attention centers on <b>{area_counts.index[0]}</b> areas — "
+                       f"{round(100 * area_counts.iloc[0] / len(df))}% of all assignments.")
     if len(emp_counts):
         bullets.append(f"<b>{emp_counts.index[0]}</b> carries the most of the standing schedule "
                        f"({int(emp_counts.iloc[0])} assignments).")
@@ -515,9 +554,7 @@ with tab1:
         mini_bar(volume(df["Location"], "Location", 5), "Location")
     with v2:
         st.markdown("**Area Type Distribution**")
-        mini_bar(volume(df.loc[df["Area Type"] != "Unknown", "Area Type"], "Area Type", 5), "Area Type")
-        if dq["unknown_area"]:
-            st.caption(f"Excludes {dq['unknown_area']} unclassified-area rows — see Data Quality tab.")
+        mini_bar(volume(df["Area Type"], "Area Type", 5), "Area Type")
     with v3:
         st.markdown("**Top Tasks**")
         mini_bar(volume(task_norm[task_norm != "No Explicit Task"], "Task", 5), "Task")
@@ -525,7 +562,7 @@ with tab1:
             st.caption(f"Excludes {dq['no_explicit']} 'No Explicit Task' rows — see Data Quality tab.")
     st.markdown(f"""
     <div class='vstrip'>
-      <div><div class='l'>Highest Volume Area</div><div class='v'>{classified_area.index[0] if len(classified_area) else '—'}</div></div>
+      <div><div class='l'>Highest Volume Area</div><div class='v'>{area_counts.index[0]}</div></div>
       <div><div class='l'>Highest Volume Location</div><div class='v'>{loc_counts.index[0]}</div></div>
       <div><div class='l'>Most Common Task</div><div class='v'>{explicit_task.index[0] if len(explicit_task) else '—'}</div></div>
     </div>
@@ -588,7 +625,7 @@ with tab2:
 with tab3:
     section("Data Quality", "Where the schedule data is clear, and where it still needs review.")
     kpi_row([
-        (dq["unknown_area"], "Unknown Area Types", "location not classified", True),
+        (dq["misc_area"], "Miscellaneous Areas", "catch-all category", True),
         (dq["no_explicit"], "No Explicit Task", "facility-note rows", False),
         (dq["unknown_freq"], "Unknown Frequencies", "no stated cadence", False),
         (dq["ambiguous"], "Ambiguous Locations", "vague / building-wide names", False),
@@ -610,9 +647,9 @@ with tab3:
     section("Unknown Value Audit", "What still requires cleanup before deeper analysis.")
     u1, u2, u3 = st.columns(3)
     with u1:
-        st.markdown(f"**Unknown Area Types — {dq['unknown_area']}**")
+        st.markdown(f"**Miscellaneous Areas — {dq['misc_area']}**")
         with st.expander("View locations"):
-            table(_unknown_by_location(df["Area Type"] == "Unknown", df), height=320)
+            table(_unknown_by_location(df["Area Type"] == "Miscellaneous", df), height=320)
     with u2:
         st.markdown(f"**No Explicit Task — {dq['no_explicit']}**")
         with st.expander("View locations"):
