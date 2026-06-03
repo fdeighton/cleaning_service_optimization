@@ -167,10 +167,11 @@ def employee_footprint(df):
     out = []
     people = df[(df["Employee"] != "") & (~df["Employee"].apply(is_all_staff))]
     for emp, g in people.groupby("Employee"):
+        ac = g["Area Type"].value_counts().drop("Miscellaneous", errors="ignore")
         out.append({"Employee": emp, "Assignments": len(g),
                     "Locations": g["Location"].nunique(),
-                    "AreaTypes": g["Area Type"].nunique(),
-                    "Areas": ", ".join(g["Area Type"].value_counts().index[:2])})
+                    "AreaTypes": int(ac.size),
+                    "Areas": ", ".join(ac.index[:2])})
     return sorted(out, key=lambda r: -r["Assignments"])
 
 
@@ -279,6 +280,11 @@ def inject_css():
     [data-testid="manage-app-button"], [data-testid="stToolbar"],
     [data-testid="stStatusWidget"], .stAppDeployButton, .viewerBadge_container__1QSob,
     [class*="viewerBadge"] {{ display: none !important; visibility: hidden !important; }}
+    /* keep the sidebar expand arrow usable after the sidebar is collapsed */
+    [data-testid="stSidebarCollapsedControl"], [data-testid="collapsedControl"] {{
+        visibility: visible !important; }}
+    [data-testid="stSidebarCollapsedControl"] svg, [data-testid="collapsedControl"] svg {{
+        fill: {INK} !important; }}
     .block-container {{ padding-top: 1.1rem; padding-bottom: 3rem; max-width: 1340px; }}
     [data-testid="stSidebar"] {{ background: {INK}; }}
     [data-testid="stSidebar"] * {{ color: #EFEAE2 !important; }}
